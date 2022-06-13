@@ -1,1 +1,0 @@
-/usr/bin/c++  -pthread CMakeFiles/skeleton.dir/skeleton.cpp.o -o skeleton  -L/usr/lib/x86_64-linux-gnu -pthread -lwx_baseu_net-3.0 -lwx_gtk3u_core-3.0 -lwx_baseu-3.0 

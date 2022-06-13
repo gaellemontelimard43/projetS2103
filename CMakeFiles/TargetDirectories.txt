@@ -1,3 +1,0 @@
-/users/info/etu-as/montelig/Desktop/c++/CMakeFiles/rebuild_cache.dir
-/users/info/etu-as/montelig/Desktop/c++/CMakeFiles/edit_cache.dir
-/users/info/etu-as/montelig/Desktop/c++/CMakeFiles/skeleton.dir
