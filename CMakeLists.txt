@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(skeleton VERSION 1.0)
+project(nomprojet VERSION 1.0)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -10,5 +10,5 @@ find_package(wxWidgets REQUIRED COMPONENTS net core base)
 include(${wxWidgets_USE_FILE})
 
 # add the executable
-add_executable(skeleton skeleton.cpp)
+add_executable(skeleton src/skeleton.cpp)
 target_link_libraries(skeleton ${wxWidgets_LIBRARIES})
