@@ -32,7 +32,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	int w, h, y ;
 	GetParent()->GetSize(&w,&h) ;
 	SetSize(wxRect(wxPoint(0,0), wxPoint(WIDGET_PANEL_WIDTH, h))) ;
-	SetBackgroundColour(*wxLIGHT_GREY) ;
+	SetBackgroundColour(*wxGREEN) ;
 
 	y = WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_BUTTON1, wxT("Click me"), wxPoint(10, y)) ;

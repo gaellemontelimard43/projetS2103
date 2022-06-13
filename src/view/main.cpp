@@ -29,3 +29,7 @@ bool MyApp::OnInit()
 	SetTopWindow(frame) ;
 	return true ;
 }
+
+//Créer un bouton -> wxButton *btn1=new wxButton(frame, wxID_ANY, _T("Bouton N°1"));
+
+//Pour bouger un élément sur une position statique -> btn1->Move(50, 50);
