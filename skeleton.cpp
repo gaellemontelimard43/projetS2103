@@ -19,7 +19,7 @@
 // this skeleton includes 4 classes that are all derived from wxWidgets classes:
 // the application class:	MyApp
 // the main frame class:	MyFrame
-// the left panel class:	MyControlPanel
+// the left panel class:	MyControlPanelxcv
 // the right panel class:	MyDrawingPanel
 //************************************************************************
 //************************************************************************
