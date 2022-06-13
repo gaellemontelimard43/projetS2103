@@ -20,6 +20,7 @@ enum
 {
 	ID_BUTTON1,
 	ID_SLIDER1,
+	ID_SLIDER2,
 	ID_CHECKBOX1
 };
 
@@ -43,7 +44,14 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	
 	y+= 15 ;
 	m_slider = new wxSlider(this, ID_SLIDER1, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
-	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_SLIDER1) ;	
+	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_SLIDER1) ;
+
+	y+= WIDGET_Y_STEP ;
+	wxStaticText* text2 = new wxStaticText(this, wxID_ANY, wxT("épaisseur trait"), wxPoint(10, y)) ;
+	
+	y+= 15 ;
+	m_slider = new wxSlider(this, ID_SLIDER2, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
+	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_SLIDER2) ;
 	
 	y+= WIDGET_Y_STEP ;
 	m_checkBox = new wxCheckBox(this, ID_CHECKBOX1, "Show (x,y)", wxPoint(10, y), wxSize(100,20)) ;
