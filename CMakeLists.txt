@@ -10,5 +10,5 @@ find_package(wxWidgets REQUIRED COMPONENTS net core base)
 include(${wxWidgets_USE_FILE})
 
 # add the executable
-add_executable(skeleton src/skeleton.cpp)
-target_link_libraries(skeleton ${wxWidgets_LIBRARIES})
+add_executable(main src/view/main.cpp src/view/MyControlPanel.cpp src/view/MyDrawingPanel.cpp src/view/MyFrame.cpp)
+target_link_libraries(main ${wxWidgets_LIBRARIES})
