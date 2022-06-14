@@ -62,8 +62,8 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	y+= WIDGET_Y_STEP ;
 	m_radioButton = new wxRadioButton(this, ID_RADIO1, "V1", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO1) ;
-	y+= WIDGET_Y_STEP ;
-	m_radioButton2 = new wxRadioButton(this, ID_RADIO2, "V2", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
+	//y+= WIDGET_Y_STEP ;
+	m_radioButton2 = new wxRadioButton(this, ID_RADIO2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;	
 }
 
