@@ -11,6 +11,7 @@
 
 #include "MyControlPanel.hpp"
 #include "MyFrame.hpp"
+#include "MyDrawingPanel.hpp"
 
 #define WIDGET_PANEL_WIDTH	150
 #define WIDGET_Y0			30
@@ -19,6 +20,9 @@
 enum
 {
 	ID_BUTTON1,
+	ID_BUTTON2,
+	ID_BUTTON3,
+	ID_BUTTON4,
 	ID_SLIDER1,
 	ID_SLIDER2,
 	ID_CHECKBOX1,
@@ -40,8 +44,20 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	SetBackgroundColour(wxColor(229,175,52)) ;
 
 	y = WIDGET_Y0 ;
-	m_button = new wxButton(this, ID_BUTTON1, wxT("Click me"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton, this, ID_BUTTON1) ;
+	m_button = new wxButton(this, ID_BUTTON1, wxT("ligne"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton1, this, ID_BUTTON1) ;
+
+	y += WIDGET_Y0 ;
+	m_button = new wxButton(this, ID_BUTTON2, wxT("cercle"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton2, this, ID_BUTTON2) ;
+
+	y += WIDGET_Y0 ;
+	m_button = new wxButton(this, ID_BUTTON3, wxT("triangle"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton3, this, ID_BUTTON3) ;
+
+	y += WIDGET_Y0 ;
+	m_button = new wxButton(this, ID_BUTTON4, wxT("rectanle"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton4, this, ID_BUTTON4) ;
 	
 	y+= WIDGET_Y_STEP ;
 	wxStaticText* text1 = new wxStaticText(this, wxID_ANY, wxT("Radius"), wxPoint(10, y)) ;
@@ -78,17 +94,53 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnButton(wxCommandEvent &event)
+void MyControlPanel::OnButton1(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 //	char* s = GetCString() ;
 //	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
 //	free(s) ;
-	wxMessageBox(wxT("You just pressed the button!")) ;
+    
+	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
+	
 }
 
-void MyControlPanel::OnRadioButton(wxCommandEvent &event){
-	
+
+//------------------------------------------------------------------------
+void MyControlPanel::OnButton2(wxCommandEvent &event)
+//------------------------------------------------------------------------
+{
+//	char* s = GetCString() ;
+//	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
+//	free(s) ;
+	wxMessageBox(wxT("clique deux fois pour avoir un cercle !")) ;
+}
+
+//------------------------------------------------------------------------
+void MyControlPanel::OnButton3(wxCommandEvent &event)
+//------------------------------------------------------------------------
+{
+//	char* s = GetCString() ;
+//	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
+//	free(s) ;
+	wxMessageBox(wxT("clique trois fois pour avoir un triangle !")) ;
+}
+
+//------------------------------------------------------------------------
+void MyControlPanel::OnButton4(wxCommandEvent &event)
+//------------------------------------------------------------------------
+{
+//	char* s = GetCString() ;
+//	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
+//	free(s) ;
+	wxMessageBox(wxT("clique quatre fois pour avoir un rectangle !")) ;
+}
+
+//------------------------------------------------------------------------
+void MyControlPanel::OnRadioButton(wxCommandEvent &event)
+//------------------------------------------------------------------------
+{
+
 	MyFrame* frame = (MyFrame*)GetParent() ;
 	MyDrawingPanel* panel = (MyDrawingPanel*)GetParent() ;
 
