@@ -28,6 +28,7 @@ enum
 };
 
 
+
 //------------------------------------------------------------------------
 MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 //------------------------------------------------------------------------
@@ -65,10 +66,14 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO1) ;
 	//y+= WIDGET_Y_STEP ;
 	m_radioButton2 = new wxRadioButton(this, ID_RADIO2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
-	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;	
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;
+
+	m_arrItems.Add( wxT("line") );
+	m_arrItems.Add( wxT("rectangle") );
+	m_arrItems.Add( wxT("triangle") );
 
 	y+= WIDGET_Y_STEP ;
-	m_comboBox = new wxComboBox(this, ID_COMBO1, "Forme", wxPoint(10, y), wxSize(100,20),forme,0,wxDefaultValidator,wxComboBoxNameStr) ;
+	m_comboBox = new wxComboBox(this, ID_COMBO1, "forme", wxPoint(10, y), wxSize(100,20),m_arrItems,0,wxDefaultValidator,_T("ID_COMBO1") );
 	Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COMBO1) ;
 }
 
