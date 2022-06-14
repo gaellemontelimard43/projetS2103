@@ -68,13 +68,13 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	m_radioButton2 = new wxRadioButton(this, ID_RADIO2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;
 
-	m_arrItems.Add( wxT("line") );
-	m_arrItems.Add( wxT("rectangle") );
-	m_arrItems.Add( wxT("triangle") );
+	//m_arrItems.Add( wxT("line") );
+	//m_arrItems.Add( wxT("rectangle") );
+	//m_arrItems.Add( wxT("triangle") );
 
-	y+= WIDGET_Y_STEP ;
-	m_comboBox = new wxComboBox(this, ID_COMBO1, "forme", wxPoint(10, y), wxSize(100,20),3,m_arrItems,0,wxDefaultValidator,"comboBox");
-	Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COMBO1) ;
+	//y+= WIDGET_Y_STEP ;
+	//m_comboBox = new wxComboBox(this, ID_COMBO1, "forme", wxPoint(10, y), wxSize(100,20),3,m_arrItems,0,wxDefaultValidator,"comboBox");
+	//Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COMBO1) ;
 }
 
 //------------------------------------------------------------------------
