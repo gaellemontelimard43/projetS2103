@@ -1,30 +1,21 @@
 #ifndef __POINT_H__
 #define __POINT_H__
 
-#include "wx/wxprec.h"
-
-#ifndef WX_PRECOMP
-#include "wx/wx.h"
-#endif
-
-#include<wx/filedlg.h>
-#include <wx/image.h>
-#include <wx/file.h>
-#include <wx/bitmap.h>
-#include <iostream>
 #include <string>
 
+#include "Forme.h"
+#include "Point.h"
+
 //-------------------------------------------
-class Point
+class Ligne : public Forme
 //-------------------------------------------
 {
 public:                        // interface publique de la classe
-    Point();                   // constructeur par d�faut
-    Point(int x, int y);       // constructeur
-    Point(int z);     
-    Point(wxPoint);         // constructeur (x = y)
-    ~Point();                  // destructeur
-    void Move(int dX, int dY); // bouge le point
+    Ligne();
+    Ligne(int m_x,int m_y, int a, int b);
+    Ligne(const Point& p1,Point p2);
+
+    
 
     // Setters
     void SetX(int x);
@@ -43,12 +34,10 @@ public:                        // interface publique de la classe
     // M�thode statique
     static int GetPointCount(); // retourne le nombre de point
 
-private:                        // invisible � l?utilisateur de la classe
+private:   
+    Point p1 ;                     // invisible � l?utilisateur de la classe
     int m_x;                    // les coordonn�es
     int m_y;                    // du point
-
-    // Attribut statique
-    static int m_pointCount;    // donn�e commune � tous les objets
 };
 
 #endif // __POINT_H__ : retour � la ligne obligatoire pour certains compilateurs

@@ -11,6 +11,7 @@
 
 #include "MyDrawingPanel.hpp"
 #include "MyFrame.hpp"
+#include "../model/Point.h"
 
 #define WIDGET_PANEL_WIDTH	150
 
@@ -56,7 +57,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 {
 	m_onePoint.x = event.m_x ;
 	m_onePoint.y = event.m_y ;
-	Refresh() ; // send an event that calls the OnPaint method
+	//Refresh() ; // send an event that calls the OnPaint method
 }
 
 //------------------------------------------------------------------------
@@ -77,10 +78,10 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	//dc.setPen(wxNullPen);
 	//dc.setPen(wxPen(wxcolour(RED)));
 	//dc.DrawLine(m_mousePoint, m_onePoint) ;
-		
-	dc.DrawLine(m_mousePoint, m_onePoint) ;
-	dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
-	dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
+
+	//dc.DrawLine(m_mousePoint, m_onePoint) ;
+	//dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
+	//dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
 	
 	if (check)
 	{
