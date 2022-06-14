@@ -25,7 +25,7 @@ public:
 	MyControlPanel( wxWindow *parent ) ;
 	int GetSliderValue() {return m_slider->GetValue() ;} ;
 	bool GetCheckBoxValue() {return m_checkBox->GetValue() ;} ;
-	const char* colour[4] = {"Blue", "Red", "Orange", "Yellow"};
+	const char* forme[4] = {"Ligne", "Rectangle", "Carré", "Cercle"};
 
 private:
 	void OnButton(wxCommandEvent &event) ;

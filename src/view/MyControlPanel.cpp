@@ -68,7 +68,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;	
 
 	y+= WIDGET_Y_STEP ;
-	m_comboBox = new wxComboBox(this, ID_COMBO1, "Colours", wxPoint(10, y), wxSize(100,20),colour,0,wxDefaultValidator,wxComboBoxNameStr) ;
+	m_comboBox = new wxComboBox(this, ID_COMBO1, "Forme", wxPoint(10, y), wxSize(100,20),forme,0,wxDefaultValidator,wxComboBoxNameStr) ;
 	Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COMBO1) ;
 }
 
