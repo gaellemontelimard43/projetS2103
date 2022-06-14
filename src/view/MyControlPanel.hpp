@@ -39,7 +39,7 @@ private:
 	wxRadioButton* m_radioButton;
 	wxRadioButton* m_radioButton2;
 	wxComboBox* m_comboBox ;
-	wxArrayString* m_arrItems = {"Ligne", "Rectangle", "Carré", "Cercle"};
+	wxArrayString* m_arrItems ;
 
 };
 #endif

@@ -73,7 +73,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	m_arrItems.Add( wxT("triangle") );
 
 	y+= WIDGET_Y_STEP ;
-	m_comboBox = new wxComboBox(this, ID_COMBO1, "forme", wxPoint(10, y), wxSize(100,20),m_arrItems,0,wxDefaultValidator,_T("ID_COMBO1") );
+	m_comboBox = new wxComboBox(this, ID_COMBO1, "forme", wxPoint(10, y), wxSize(100,20),3,m_arrItems,0,wxDefaultValidator,"comboBox");
 	Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COMBO1) ;
 }
 
