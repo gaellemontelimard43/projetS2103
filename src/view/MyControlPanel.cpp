@@ -21,7 +21,9 @@ enum
 	ID_BUTTON1,
 	ID_SLIDER1,
 	ID_SLIDER2,
-	ID_CHECKBOX1
+	ID_CHECKBOX1,
+	ID_RADIO1,
+	ID_RADIO2,
 };
 
 
@@ -33,7 +35,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	int w, h, y ;
 	GetParent()->GetSize(&w,&h) ;
 	SetSize(wxRect(wxPoint(0,0), wxPoint(WIDGET_PANEL_WIDTH, h))) ;
-	SetBackgroundColour(*wxGREEN) ;
+	SetBackgroundColour(wxColor(229,175,52)) ;
 
 	y = WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_BUTTON1, wxT("Click me"), wxPoint(10, y)) ;
@@ -56,6 +58,13 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	y+= WIDGET_Y_STEP ;
 	m_checkBox = new wxCheckBox(this, ID_CHECKBOX1, "Show (x,y)", wxPoint(10, y), wxSize(100,20)) ;
 	Bind(wxEVT_CHECKBOX, &MyControlPanel::OnCheckBox, this, ID_CHECKBOX1) ;	
+
+	y+= WIDGET_Y_STEP ;
+	m_radioButton = new wxRadioButton(this, ID_RADIO1, "V1", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO1) ;
+	y+= WIDGET_Y_STEP ;
+	m_radioButton2 = new wxRadioButton(this, ID_RADIO2, "V2", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;	
 }
 
 //------------------------------------------------------------------------
@@ -66,6 +75,21 @@ void MyControlPanel::OnButton(wxCommandEvent &event)
 //	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
 //	free(s) ;
 	wxMessageBox(wxT("You just pressed the button!")) ;
+}
+
+void MyControlPanel::OnRadioButton(wxCommandEvent &event){
+	
+	MyFrame* frame = (MyFrame*)GetParent() ;
+	MyDrawingPanel* panel = (MyDrawingPanel*)GetParent() ;
+
+	if(m_radioButton->GetValue() == true){
+	SetBackgroundColour(wxColor(229,175,52)) ;
+	}
+	else{
+		SetBackgroundColour(wxColor(106,196,86)) ;
+		panel->SetBackgroundColour(*wxGREEN);
+		frame->RefreshDrawing();
+	}
 }
 
 //------------------------------------------------------------------------

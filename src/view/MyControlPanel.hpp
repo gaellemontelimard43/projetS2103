@@ -28,8 +28,11 @@ private:
 	void OnButton(wxCommandEvent &event) ;
 	void OnSlider(wxScrollEvent &event) ;
 	void OnCheckBox(wxCommandEvent &event) ;
+	void OnRadioButton(wxCommandEvent &event) ;
 	wxButton* m_button ;
 	wxSlider* m_slider ;
 	wxCheckBox* m_checkBox ;
+	wxRadioButton* m_radioButton;
+	wxRadioButton* m_radioButton2;
 };
 #endif
