@@ -14,8 +14,6 @@
 
 #define WIDGET_PANEL_WIDTH	150
 
-
-
 //************************************************************************
 //************************************************************************
 // MyDrawingPanel class (where drawings are displayed)
@@ -77,10 +75,11 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	//dc.setPen(wxNullPen);
 	//dc.setPen(wxPen(wxcolour(RED)));
 	//dc.DrawLine(m_mousePoint, m_onePoint) ;
-		
+	dc.DrawLine(120,20,220,120);
 	dc.DrawLine(m_mousePoint, m_onePoint) ;
 	dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
 	dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
+	dc.DrawCircle(30,55,10) ;
 	
 	if (check)
 	{
