@@ -84,7 +84,7 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	dc.DrawCircle(30,55,10) ;
 
 	
-	>>>>>>> f479198163e1d919740ad432d2bfb68136090bc4
+	//>>>>>>> f479198163e1d919740ad432d2bfb68136090bc4
 
 	if (check)
 	{
