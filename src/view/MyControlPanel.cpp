@@ -24,6 +24,7 @@ enum
 	ID_CHECKBOX1,
 	ID_RADIO1,
 	ID_RADIO2,
+	ID_COMBO1,
 };
 
 
@@ -65,6 +66,10 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	//y+= WIDGET_Y_STEP ;
 	m_radioButton2 = new wxRadioButton(this, ID_RADIO2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;	
+
+	y+= WIDGET_Y_STEP ;
+	m_comboBox = new wxComboBox(this, ID_COMBO1, "Colours", wxPoint(10, y), wxSize(100,20),colour,0,wxDefaultValidator,wxComboBoxNameStr) ;
+	Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COMBO1) ;
 }
 
 //------------------------------------------------------------------------
@@ -90,6 +95,12 @@ void MyControlPanel::OnRadioButton(wxCommandEvent &event){
 		panel->SetBackgroundColour(*wxGREEN);
 		frame->RefreshDrawing();
 	}
+}
+
+void MyControlPanel::OnComboBox(wxCommandEvent &event){
+	
+	MyFrame* frame = (MyFrame*)GetParent() ;
+
 }
 
 //------------------------------------------------------------------------

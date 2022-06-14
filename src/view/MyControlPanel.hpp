@@ -12,6 +12,8 @@
 #include <wx/image.h>
 #include <wx/file.h>
 #include <wx/bitmap.h>
+#include <iostream>
+#include <string>
 
 
 
@@ -30,6 +32,7 @@ private:
 	void OnSlider(wxScrollEvent &event) ;
 	void OnCheckBox(wxCommandEvent &event) ;
 	void OnRadioButton(wxCommandEvent &event) ;
+	void OnComboBox(wxCommandEvent &event) ;
 	wxButton* m_button ;
 	wxSlider* m_slider ;
 	wxCheckBox* m_checkBox ;
