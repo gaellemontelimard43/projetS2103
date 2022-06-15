@@ -97,7 +97,7 @@ void MyControlPanel::OnLigne(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
-	frame->Controleur(ID_LIGNE);
+	frame->ControleurBouton(ID_LIGNE);
 	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
 	
 }
@@ -108,7 +108,7 @@ void MyControlPanel::OnCercle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
-	frame->Controleur(ID_CERCLE);
+	frame->ControleurBouton(ID_CERCLE);
 	wxMessageBox(wxT("clique deux fois pour avoir un cercle !")) ;
 }
 
@@ -117,7 +117,7 @@ void MyControlPanel::OnTriangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
-	frame->Controleur(ID_TRIANGLE);
+	frame->ControleurBouton(ID_TRIANGLE);
 	wxMessageBox(wxT("clique trois fois pour avoir un triangle !")) ;
 }
 
@@ -126,7 +126,7 @@ void MyControlPanel::OnRectangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
-	frame->Controleur(ID_RECTANGLE);
+	frame->ControleurBouton(ID_RECTANGLE);
 	
 	wxMessageBox(wxT("clique quatre fois pour avoir un rectangle !")) ;
 }
