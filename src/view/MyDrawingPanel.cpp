@@ -63,14 +63,18 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 
 		case 0:
 			m_listclicks[0] = m_mousePoint ; 
+			compteur++;
 		break; 
 
 		case 1:
-			m_listclicks[1] = m_mousePoint ; 
+			m_listclicks[1] = m_mousePoint ;
+			compteur++; 
+
 		break;
 
 		case 2:
 			m_listckicks[2] = m_mousePoint ;
+			compteur++;
 		break;
 
 		default:
