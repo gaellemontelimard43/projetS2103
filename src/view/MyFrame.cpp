@@ -119,19 +119,26 @@ void MyFrame::OnSize(wxSizeEvent &event)
 	m_drawingPanel->SetSize(wxRect(wxPoint(WIDGET_PANEL_WIDTH,0), wxPoint(w, h))) ;
 }
 
+//------------------------------------------------------------------------
+void Controleur(int m_ClickNumber, int ID) {
+//------------------------------------------------------------------------
+    switch(ID){
 
-void Controleur(int controleur) {
-    switch(controleur){
-        case 0: 
-        //On fait rien
+        case 1: 
+        //ligne 
         break;
 
-        case 1:
-        //Ligne cercle 
+        case 2:
+        //cercle
         break;
 
-        case2:
-        //Triangle, Rectangle 
+        case 3:
+        //triangle
         break; 
+
+		case 4:
+        //rectangle
+        break; 
+
     }   
 }
