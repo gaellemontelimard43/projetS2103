@@ -97,6 +97,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 void MyControlPanel::OnLigne(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
+
 	controleur(ID_LIGNE);
 	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
 	
@@ -123,7 +124,9 @@ void MyControlPanel::OnTriangle(wxCommandEvent &event)
 void MyControlPanel::OnRectangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
+
 	controleur(ID_RECTANGLE);
+	
 	wxMessageBox(wxT("clique quatre fois pour avoir un rectangle !")) ;
 }
 

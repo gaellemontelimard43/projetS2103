@@ -127,10 +127,10 @@ void Controleur(int m_ClickNumber, int ID) {
         case 1: 
         //ligne 
 			while(m_ClickNumber < 2){
-				if(m_ClickNumber = 1){
+				if(m_ClickNumber == 1){
 					save --> m_listclicks[1]
 				}
-				if(m_ClickNumber = 2){
+				if(m_ClickNumber == 2){
 					save --> m_listclicks[2]
 				}
 			}
