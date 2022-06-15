@@ -23,21 +23,5 @@ class MyApp: public wxApp
     virtual bool OnInit() ;
 };
 
-void Controleur(int controleur) {
-    switch(controleur){
-        case 0: 
-        //On fait rien
-        break;
-
-        case 1:
-        //Ligne cercle 
-        break;
-
-        case2:
-        //Triangle, Rectangle 
-        break; 
-    }   
-}
-
 
 #endif

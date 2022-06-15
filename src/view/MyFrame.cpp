@@ -118,3 +118,20 @@ void MyFrame::OnSize(wxSizeEvent &event)
 	m_controlPanel->SetSize(wxRect(wxPoint(0,0), wxPoint(WIDGET_PANEL_WIDTH, h))) ;
 	m_drawingPanel->SetSize(wxRect(wxPoint(WIDGET_PANEL_WIDTH,0), wxPoint(w, h))) ;
 }
+
+
+void Controleur(int controleur) {
+    switch(controleur){
+        case 0: 
+        //On fait rien
+        break;
+
+        case 1:
+        //Ligne cercle 
+        break;
+
+        case2:
+        //Triangle, Rectangle 
+        break; 
+    }   
+}
