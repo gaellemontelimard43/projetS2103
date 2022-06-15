@@ -126,10 +126,24 @@ void Controleur(int m_ClickNumber, int ID) {
 
         case 1: 
         //ligne 
+			switch(m_ClickNumber){
+				case 1:
+					//save
+				case 2: 
+					//save
+				//draw
+			}
         break;
 
         case 2:
         //cercle
+			switch(m_ClickNumber){
+				case 1:
+					//save
+				case 2: 
+					//save
+				//draw
+			}
         break;
 
         case 3:
