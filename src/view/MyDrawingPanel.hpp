@@ -28,10 +28,8 @@ private:
 	void OnMouseMove(wxMouseEvent &event) ;
 	void OnMouseLeftDown(wxMouseEvent &event) ;
 	void OnPaint(wxPaintEvent &event) ;
-	wxPoint m_mousePoint ;
-	wxPoint m_onePoint ;
-	int controleur = 0; 
-	wxPoint NombrePoint[2];
+	wxPoint m_listclicks[3];
+	int m_ClickNumber;
 };
 
 #endif
