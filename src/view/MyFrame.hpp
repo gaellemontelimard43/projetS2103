@@ -25,7 +25,7 @@ public:
 	MyFrame(const wxString& title, const wxPoint& pos, const wxSize& size);
 	MyControlPanel* GetControlPanel(){return m_controlPanel ;} ;
 	void RefreshDrawing(){m_drawingPanel->Refresh() ;} ;
-	void Controleur(int m_ClickNumber, int ID);
+	void Controleur(int ID);
 
 protected:
 	void OnQuit(wxCommandEvent& event);

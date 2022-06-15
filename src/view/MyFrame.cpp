@@ -120,45 +120,23 @@ void MyFrame::OnSize(wxSizeEvent &event)
 }
 
 //------------------------------------------------------------------------
-void Controleur(int m_ClickNumber, int ID) {
+void Controleur(int ID) {
 //------------------------------------------------------------------------
     switch(ID){
 
         case 1: 
         //ligne 
-			while(m_ClickNumber < 2){
-				if(m_ClickNumber == 1){
-					save --> m_listclicks[1]
-				}
-				if(m_ClickNumber == 2){
-					save --> m_listclicks[2]
-				}
-			}
-			draw ligne
+			
         break;
 
         case 2:
         //cercle
-			switch(m_ClickNumber){
-				case 1:
-					//save
-				case 2: 
-					//save
-				//draw
-			}
+			
         break;
 
         case 3:
         //triangle
-			switch(m_ClickNumber){
-				case 1:
-					//save
-				case 2: 
-					//save
-				case 3: 
-					//save
-				//draw
-			}
+		
         break; 
 
 		case 4:
