@@ -126,13 +126,15 @@ void Controleur(int m_ClickNumber, int ID) {
 
         case 1: 
         //ligne 
-			switch(m_ClickNumber){
-				case 1:
-					//save
-				case 2: 
-					//save
-				//draw
+			while(m_ClickNumber < 2){
+				if(m_ClickNumber = 1){
+					save --> m_listclicks[1]
+				}
+				if(m_ClickNumber = 2){
+					save --> m_listclicks[2]
+				}
 			}
+			draw ligne
         break;
 
         case 2:
@@ -148,6 +150,15 @@ void Controleur(int m_ClickNumber, int ID) {
 
         case 3:
         //triangle
+			switch(m_ClickNumber){
+				case 1:
+					//save
+				case 2: 
+					//save
+				case 3: 
+					//save
+				//draw
+			}
         break; 
 
 		case 4:
