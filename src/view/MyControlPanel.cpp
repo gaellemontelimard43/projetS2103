@@ -97,10 +97,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 void MyControlPanel::OnLigne(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-//	char* s = GetCString() ;
-//	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
-//	free(s) ;
-    
+	controleur(ID_LIGNE);
 	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
 	
 }
@@ -110,9 +107,7 @@ void MyControlPanel::OnLigne(wxCommandEvent &event)
 void MyControlPanel::OnCercle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-//	char* s = GetCString() ;
-//	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
-//	free(s) ;
+	controleur(ID_CERCLE);
 	wxMessageBox(wxT("clique deux fois pour avoir un cercle !")) ;
 }
 
@@ -120,9 +115,7 @@ void MyControlPanel::OnCercle(wxCommandEvent &event)
 void MyControlPanel::OnTriangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-//	char* s = GetCString() ;
-//	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
-//	free(s) ;
+	controleur(ID_TRIANGLE);
 	wxMessageBox(wxT("clique trois fois pour avoir un triangle !")) ;
 }
 
@@ -130,9 +123,7 @@ void MyControlPanel::OnTriangle(wxCommandEvent &event)
 void MyControlPanel::OnRectangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-//	char* s = GetCString() ;
-//	wxMessageBox(wxString::FromAscii(s)) ; // call a C function located in the sample.cp module
-//	free(s) ;
+	controleur(ID_RECTANGLE);
 	wxMessageBox(wxT("clique quatre fois pour avoir un rectangle !")) ;
 }
 
