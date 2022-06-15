@@ -148,26 +148,30 @@ void MyFrame::ControleurBouton(int ID) {
 
 
 //------------------------------------------------------------------------
-void MyFrame::ControleurClick(int m_ClickNumber) {
+void MyFrame::ControleurClick(int ID, int m_ClickNumber) {
 //------------------------------------------------------------------------
     	switch(m_ClickNumber){
 
 		case 0:
-			m_listclicks[0] = m_mousePoint ; 
-			compteur++;
+			m_drawingPanel->m_listclicks[0] = m_drawingPanel->m_mousePoint ; 
 		break; 
 
 		case 1:
-			m_listclicks[1] = m_mousePoint ;
-			compteur++; 
+			m_drawingPanel->m_listclicks[1] = m_drawingPanel->m_mousePoint ;
+			if((ID ==1)||(ID == 2)){
+				ControleurBouton(ID);
+			}
 		break;
 
 		case 2:
-			m_listckicks[2] = m_mousePoint ;
-			compteur++;
+			m_drawingPanel->m_listckicks[2] = m_drawingPanel->m_mousePoint ;
+			m_drawingPanel->m_listclicks[1] = m_drawingPanel->m_mousePoint ;
+			if((ID ==3)||(ID == 4)){
+				ControleurBouton(ID);
+			}
 		break;
 
 		default:
-			compteur = 0 ;
+			//compteur = 0 ;
 	}
 }
