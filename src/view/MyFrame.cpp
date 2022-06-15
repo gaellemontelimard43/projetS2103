@@ -120,7 +120,7 @@ void MyFrame::OnSize(wxSizeEvent &event)
 }
 
 //------------------------------------------------------------------------
-void Controleur(int ID) {
+void MyFrame::Controleur(int ID) {
 //------------------------------------------------------------------------
     switch(ID){
 
