@@ -19,15 +19,15 @@
 
 enum
 {
-	ID_BUTTON1 = 1,
-	ID_BUTTON2,
-	ID_BUTTON3,
-	ID_BUTTON4,
+	ID_LIGNE = 1,
+	ID_CERCLE,
+	ID_TRIANGLE,
+	ID_RECTANGLE,
 	ID_SLIDER1,
 	ID_SLIDER2,
-	ID_CHECKBOX1,
-	ID_RADIO1,
-	ID_RADIO2,
+	ID_COORDONNEES,
+	ID_COULEUR1,
+	ID_COULEUR2,
 	ID_COMBO1,
 };
 
@@ -44,20 +44,20 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	SetBackgroundColour(wxColor(229,175,52)) ;
 
 	y = WIDGET_Y0 ;
-	m_button = new wxButton(this, ID_BUTTON1, wxT("ligne"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton1, this, ID_BUTTON1) ;
+	m_button = new wxButton(this,ID_LIGNE, wxT("ligne"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton1, this, ID_LIGNE) ;
 
 	y += WIDGET_Y0 ;
-	m_button = new wxButton(this, ID_BUTTON2, wxT("cercle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton2, this, ID_BUTTON2) ;
+	m_button = new wxButton(this, ID_CERCLE, wxT("cercle"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton2, this, ID_CERCLE) ;
 
 	y += WIDGET_Y0 ;
-	m_button = new wxButton(this, ID_BUTTON3, wxT("triangle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton3, this, ID_BUTTON3) ;
+	m_button = new wxButton(this, ID_TRIANGLE, wxT("triangle"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton3, this, ID_TRIANGLE) ;
 
 	y += WIDGET_Y0 ;
-	m_button = new wxButton(this, ID_BUTTON4, wxT("rectanle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton4, this, ID_BUTTON4) ;
+	m_button = new wxButton(this, ID_RECTANGLE, wxT("rectanle"), wxPoint(10, y)) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton4, this, ID_RECTANGLE) ;
 	
 	y+= WIDGET_Y_STEP ;
 	wxStaticText* text1 = new wxStaticText(this, wxID_ANY, wxT("Radius"), wxPoint(10, y)) ;
@@ -74,15 +74,15 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_SLIDER2) ;
 	
 	y+= WIDGET_Y_STEP ;
-	m_checkBox = new wxCheckBox(this, ID_CHECKBOX1, "Show (x,y)", wxPoint(10, y), wxSize(100,20)) ;
-	Bind(wxEVT_CHECKBOX, &MyControlPanel::OnCheckBox, this, ID_CHECKBOX1) ;	
+	m_checkBox = new wxCheckBox(this, ID_COORDONNEES, "Show (x,y)", wxPoint(10, y), wxSize(100,20)) ;
+	Bind(wxEVT_CHECKBOX, &MyControlPanel::OnCheckBox, this, ID_COORDONNEES) ;	
 
 	y+= WIDGET_Y_STEP ;
-	m_radioButton = new wxRadioButton(this, ID_RADIO1, "V1", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
-	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO1) ;
+	m_radioButton = new wxRadioButton(this, ID_COULEUR1, "V1", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_COULEUR1) ;
 	//y+= WIDGET_Y_STEP ;
-	m_radioButton2 = new wxRadioButton(this, ID_RADIO2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
-	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_RADIO2) ;
+	m_radioButton2 = new wxRadioButton(this, ID_COULEUR2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_COULEUR2) ;
 
 	//m_arrItems.Add( wxT("line") );
 	//m_arrItems.Add( wxT("rectangle") );
@@ -94,7 +94,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnButton1(wxCommandEvent &event)
+void MyControlPanel::OnLigne(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 //	char* s = GetCString() ;
@@ -107,7 +107,7 @@ void MyControlPanel::OnButton1(wxCommandEvent &event)
 
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnButton2(wxCommandEvent &event)
+void MyControlPanel::OnCercle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 //	char* s = GetCString() ;

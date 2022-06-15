@@ -30,6 +30,8 @@ private:
 	void OnPaint(wxPaintEvent &event) ;
 	wxPoint m_mousePoint ;
 	wxPoint m_onePoint ;
+	int controleur = 0; 
+	wxPoint NombrePoint[2];
 };
 
 #endif
