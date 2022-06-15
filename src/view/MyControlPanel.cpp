@@ -23,8 +23,8 @@ enum
 	ID_CERCLE,
 	ID_TRIANGLE,
 	ID_RECTANGLE,
-	ID_SLIDER1,
-	ID_SLIDER2,
+	ID_RADIUS,
+	ID_EPAISSEUR,
 	ID_COORDONNEES,
 	ID_COULEUR1,
 	ID_COULEUR2,
@@ -45,44 +45,44 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 
 	y = WIDGET_Y0 ;
 	m_button = new wxButton(this,ID_LIGNE, wxT("ligne"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton1, this, ID_LIGNE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnLigne, this, ID_LIGNE) ;
 
 	y += WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_CERCLE, wxT("cercle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton2, this, ID_CERCLE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnCercle, this, ID_CERCLE) ;
 
 	y += WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_TRIANGLE, wxT("triangle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton3, this, ID_TRIANGLE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnTriangle, this, ID_TRIANGLE) ;
 
 	y += WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_RECTANGLE, wxT("rectanle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnButton4, this, ID_RECTANGLE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnRectangle, this, ID_RECTANGLE) ;
 	
 	y+= WIDGET_Y_STEP ;
 	wxStaticText* text1 = new wxStaticText(this, wxID_ANY, wxT("Radius"), wxPoint(10, y)) ;
 	
 	y+= 15 ;
-	m_slider = new wxSlider(this, ID_SLIDER1, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
-	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_SLIDER1) ;
+	m_slider = new wxSlider(this, ID_RADIUS, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
+	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_RADIUS) ;
 
 	y+= WIDGET_Y_STEP ;
 	wxStaticText* text2 = new wxStaticText(this, wxID_ANY, wxT("épaisseur trait"), wxPoint(10, y)) ;
 	
 	y+= 15 ;
-	m_slider = new wxSlider(this, ID_SLIDER2, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
-	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_SLIDER2) ;
+	m_slider = new wxSlider(this, ID_EPAISSEUR, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
+	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_EPAISSEUR) ;
 	
 	y+= WIDGET_Y_STEP ;
 	m_checkBox = new wxCheckBox(this, ID_COORDONNEES, "Show (x,y)", wxPoint(10, y), wxSize(100,20)) ;
-	Bind(wxEVT_CHECKBOX, &MyControlPanel::OnCheckBox, this, ID_COORDONNEES) ;	
+	Bind(wxEVT_CHECKBOX, &MyControlPanel::OnCoordonnees, this, ID_COORDONNEES) ;	
 
 	y+= WIDGET_Y_STEP ;
 	m_radioButton = new wxRadioButton(this, ID_COULEUR1, "V1", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
-	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_COULEUR1) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR1) ;
 	//y+= WIDGET_Y_STEP ;
 	m_radioButton2 = new wxRadioButton(this, ID_COULEUR2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
-	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnRadioButton, this, ID_COULEUR2) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR2) ;
 
 	//m_arrItems.Add( wxT("line") );
 	//m_arrItems.Add( wxT("rectangle") );
@@ -117,7 +117,7 @@ void MyControlPanel::OnCercle(wxCommandEvent &event)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnButton3(wxCommandEvent &event)
+void MyControlPanel::OnTriangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 //	char* s = GetCString() ;
@@ -127,7 +127,7 @@ void MyControlPanel::OnButton3(wxCommandEvent &event)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnButton4(wxCommandEvent &event)
+void MyControlPanel::OnRectangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 //	char* s = GetCString() ;
@@ -137,7 +137,7 @@ void MyControlPanel::OnButton4(wxCommandEvent &event)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnRadioButton(wxCommandEvent &event)
+void MyControlPanel::OnCouleur(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 
@@ -169,7 +169,7 @@ void MyControlPanel::OnSlider(wxScrollEvent &event)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnCheckBox(wxCommandEvent &event)
+void MyControlPanel::OnCoordonnees(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;

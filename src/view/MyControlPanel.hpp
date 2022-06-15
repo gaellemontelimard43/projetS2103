@@ -28,13 +28,13 @@ public:
 	const char* forme[4] = {"Ligne", "Rectangle", "Carré", "Cercle"};
 
 private:
-	void OnButton1(wxCommandEvent &event) ;
-	void OnButton2(wxCommandEvent &event) ;
-	void OnButton3(wxCommandEvent &event) ;
-	void OnButton4(wxCommandEvent &event) ;
+	void OnLigne(wxCommandEvent &event) ;
+	void OnCercle(wxCommandEvent &event) ;
+	void OnTriangle(wxCommandEvent &event) ;
+	void OnRectangle(wxCommandEvent &event) ;
 	void OnSlider(wxScrollEvent &event) ;
-	void OnCheckBox(wxCommandEvent &event) ;
-	void OnRadioButton(wxCommandEvent &event) ;
+	void OnCoordonnees(wxCommandEvent &event) ;
+	void OnCouleur(wxCommandEvent &event) ;
 	void OnComboBox(wxCommandEvent &event) ;
 	wxButton* m_button ;
 	wxSlider* m_slider ;
