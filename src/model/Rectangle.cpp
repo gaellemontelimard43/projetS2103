@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// Allocation de la mémoire pour l'attribut statique
+// Allocation de la mï¿½moire pour l'attribut statique
 // static
 unsigned int Rectangle::m_rectCount = 0;
 
@@ -17,8 +17,8 @@ Rectangle::Rectangle(int x, int y, int w, int h, const std::string& label) :
 
     Forme(label)
 //-------------------------------------------
-// attention, cette version appelle le constructeur par défaut de Point
-// comme le compilateur ne l?a pas créé, il faut le rajouter dans Point
+// attention, cette version appelle le constructeur par dï¿½faut de Point
+// comme le compilateur ne l?a pas crï¿½ï¿½, il faut le rajouter dans Point
 {
     cout << __func__ << " @=" << this << "\n";
     m_corner.SetX(x);
@@ -35,9 +35,9 @@ Rectangle::Rectangle(const Point& p, int w, int h, const std::string& label) :
     m_w(w),
     m_h(h)
 //-------------------------------------------
-// cette version n'appelle pas le constructeur par défaut de Point
+// cette version n'appelle pas le constructeur par dï¿½faut de Point
 // car on utilise la liste d'initialisation
-// On aurait pu simplifier en créant un constructeur par copie pour la classe Point
+// On aurait pu simplifier en crï¿½ant un constructeur par copie pour la classe Point
 {
     cout << __func__ << " @=" << this << "\n";
     m_rectCount++;
@@ -55,7 +55,7 @@ Rectangle::~Rectangle()
 void Rectangle::SetCorner(const Point& p)
 //-------------------------------------------
 {
-    // On utilise operator= définit automatiquement par le compilateur
+    // On utilise operator= dï¿½finit automatiquement par le compilateur
     m_corner = p;
 }
 
@@ -77,8 +77,8 @@ void Rectangle::SetHeight(int h)
 const Point& Rectangle::GetCorner() const
 //-------------------------------------------
 {
-    // Retourne une référence const sur m_corner
-    // pour éviter une copie d'objet
+    // Retourne une rï¿½fï¿½rence const sur m_corner
+    // pour ï¿½viter une copie d'objet
     return m_corner;
 }
 
@@ -125,10 +125,10 @@ int Rectangle::GetRectCount()
 //-------------------------------------------
 bool Rectangle::IsInside(const Rectangle &r) const
 //-------------------------------------------
-// retourne true si le rectangle est entièrement à l'intérieur (inclus) dans le Rectangle r
+// retourne true si le rectangle est entiï¿½rement ï¿½ l'intï¿½rieur (inclus) dans le Rectangle r
 // si r1 est inclus dans r2
 {
-    // On récupère les valeurs des points du rectangle
+    // On rï¿½cupï¿½re les valeurs des points du rectangle
     int x1r1 = GetCorner().GetX();
     int y1r1 = GetCorner().GetY();
     int x2r1 = x1r1 + m_w;
@@ -138,12 +138,12 @@ bool Rectangle::IsInside(const Rectangle &r) const
     int x2r2 = x1r2 + r.GetWidth();
     int y2r2 = y1r2 + r.GetHeight();
 
-    // On vérifier que r est inclus dans ce Rectangle (this)
+    // On vï¿½rifier que r est inclus dans ce Rectangle (this)
     return ((x1r1 > x1r2 && x1r1 < x2r2) || (x1r1 < x1r2 && x1r1 > x2r2)) &&
            ((x1r1 > x1r2 && x1r1 < x2r2) || (x1r1 < x1r2 && x1r1 > x2r2));
 }
 
-// On redéfinit les méthodes virtuelles pour les affiner
+// On redï¿½finit les mï¿½thodes virtuelles pour les affiner
 float Rectangle::Surface() const
 {
     return (float)(m_w * m_h);
@@ -153,3 +153,6 @@ float Rectangle::Perimeter() const
 {
     return (float)(2*m_w + 2*m_h);;
 }
+
+
+void Rectangle::Draw(){}

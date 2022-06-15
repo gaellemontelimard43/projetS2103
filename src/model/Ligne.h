@@ -15,6 +15,7 @@ public:                        // interface publique de la classe
     Ligne(int m_x,int m_y, int m_a, int m_b);
     Ligne(wxPoint p1, wxPoint p2);
     ~Ligne();
+    virtual void Draw() override;
 
 private: 
     int m_x ; 

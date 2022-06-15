@@ -83,6 +83,9 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	m_radioButton2 = new wxRadioButton(this, ID_COULEUR2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR2) ;
 
+	//wxListBox (wxWindow *parent, wxWindowID id, 
+	//const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, int n=0, const wxString choices[]=NULL, long style=0, const wxValidator &validator=wxDefaultValidator, const wxString &name=wxListBoxNameStr)
+	
 	//m_arrItems.Add( wxT("line") );
 	//m_arrItems.Add( wxT("rectangle") );
 	//m_arrItems.Add( wxT("triangle") );

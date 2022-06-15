@@ -11,7 +11,7 @@ m_x(m_x),m_y(m_y),m_a(m_a),m_b(m_b);
 
 Ligne::Ligne(){}
 
-Ligne::Ligne(wxPoint p1, wxPoint p2)
-{
-}
+Ligne::Ligne(wxPoint p1, wxPoint p2){}
+
+void Ligne::Draw(){}
 

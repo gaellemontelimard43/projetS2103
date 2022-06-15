@@ -8,21 +8,22 @@
 class Cercle : public Forme
 {
 public:
-    // Construction par défaut, par copie, avec paramètres
+    // Construction par dï¿½faut, par copie, avec paramï¿½tres
     Cercle();
     Cercle(const Cercle &other);
     Cercle(Point centre, int radius, std::string label);
 
-    // Destructeur virtuel car on peut dériver cette classe
+    // Destructeur virtuel car on peut dï¿½river cette classe
     virtual ~Cercle();
 
-    // Opérateur d'affectation
+    // Opï¿½rateur d'affectation
     Cercle &operator=(const Cercle &other);
 
-    // Méthodes virtuelles pour surcharger celles de la classe Mère
+    // Mï¿½thodes virtuelles pour surcharger celles de la classe Mï¿½re
     virtual float Surface() const override;
     virtual float Perimeter() const override;
     virtual void Display() const override;
+    virtual void Draw() override;
 
 private:    // Could be protected
     Point m_center;

@@ -28,10 +28,10 @@ Forme::Forme(const Forme& other)
 Forme::~Forme()
 {
     cout << "~Forme" << endl;
-    // Dans les dernières versions de C++, il n'est plus obligatoire de tester si le pointeur
-    // vaut nullptr (équivalent à NULL depuis C++11) avant d'appeler delete. Si ce pointeur
-    // est nullptr, alors il ne se passe rien. De plus, dans le code écrit ici, il n'y a
-    // jamais de cas où m_label vaut nullptr (le constructeur par défaut alloue une string)
+    // Dans les derniï¿½res versions de C++, il n'est plus obligatoire de tester si le pointeur
+    // vaut nullptr (ï¿½quivalent ï¿½ NULL depuis C++11) avant d'appeler delete. Si ce pointeur
+    // est nullptr, alors il ne se passe rien. De plus, dans le code ï¿½crit ici, il n'y a
+    // jamais de cas oï¿½ m_label vaut nullptr (le constructeur par dï¿½faut alloue une string)
     delete m_label; 
 }
 
@@ -40,24 +40,24 @@ Forme& Forme::operator=(const Forme& other)
     // La Forme ne contient qu'un attribut, le label, on peut utiliser SetLabel
     SetLabel(*(other.m_label));
 
-    // On renvoit une référence sur l'objet courant
+    // On renvoit une rï¿½fï¿½rence sur l'objet courant
     return *(this);
 }
 
-// #define VERSION_ALTERNATIVE // Pour activer la version alternative du code, décommenter cette ligne
+// #define VERSION_ALTERNATIVE // Pour activer la version alternative du code, dï¿½commenter cette ligne
 
 void Forme::SetLabel(const std::string& label)
 {
 #ifdef VERSION_ALTERNATIVE
     // Version alternative
-    // On réalise une affectation des std::string (std::string.operator= de fait)
-    // C'est plus simple que ce qui est demandé dans le TP et ça fonctionne car nous avons
-    // *une seule* std::string. Si on gérait un tableau de strings (new std::string[XXX]),
-    // çà ne fonctionnerait pas
+    // On rï¿½alise une affectation des std::string (std::string.operator= de fait)
+    // C'est plus simple que ce qui est demandï¿½ dans le TP et ï¿½a fonctionne car nous avons
+    // *une seule* std::string. Si on gï¿½rait un tableau de strings (new std::string[XXX]),
+    // ï¿½ï¿½ ne fonctionnerait pas
     *m_label = label;
 #else
-    // Version demandée
-    // On libère la précédente std::string
+    // Version demandï¿½e
+    // On libï¿½re la prï¿½cï¿½dente std::string
     delete m_label;
     // On alloue une nouvelle copie de la chaine
     m_label = new string(label);
@@ -69,3 +69,6 @@ std::string Forme::GetLabel() const
     // On renvoie une copie de la chaine
     return *(m_label);
 }
+
+Forme::virtual void Draw(){}
+

@@ -6,7 +6,7 @@
 
 using namespace std; // Jamais dans un point h(pp) !
 
-// Réservation mémoire de l'attribut statique de la classe Triangle
+// Rï¿½servation mï¿½moire de l'attribut statique de la classe Triangle
 // static
 unsigned int Triangle::m_triangleCount = 0;
 
@@ -58,9 +58,9 @@ Triangle &Triangle::operator=(const Triangle &other)
     return *this;
 }
 
-// On redéfinit les méthodes virtuelles pour les affiner
+// On redï¿½finit les mï¿½thodes virtuelles pour les affiner
 float Triangle::Surface() const
-// avec la formul de H´eron
+// avec la formul de Hï¿½eron
 {
     float a = m_p1.Distance(m_p2);
     float b = m_p1.Distance(m_p3);
@@ -82,3 +82,4 @@ void Triangle::Display() const
               << "(" << m_p3.GetX() << "," << m_p3.GetY() << ")"
               << " P=" << Perimeter() << " S=" << Surface() << std::endl;
 }
+void Triangle::Draw(){}

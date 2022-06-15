@@ -20,9 +20,9 @@ public:
     void SetLabel(const std::string& s);
     std::string GetLabel() const;
 
-    // Méthodes virtuelles à déclarer dans les classes filles
-    // On déclare la méthode en inline (i.e. le code est directement
-    // intégré dans la déclaration de la classe).
+    // Mï¿½thodes virtuelles ï¿½ dï¿½clarer dans les classes filles
+    // On dï¿½clare la mï¿½thode en inline (i.e. le code est directement
+    // intï¿½grï¿½ dans la dï¿½claration de la classe).
     virtual void Display() const
     {
         std::cout << "Je suis une Forme" << std::endl;
@@ -30,6 +30,8 @@ public:
 
     virtual float Surface() const { return 0.0f; }
     virtual float Perimeter() const { return 0.0f; }
+    virtual void Draw();
+
 
 protected:  // ou private
     std::string * m_label;

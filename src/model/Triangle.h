@@ -11,8 +11,8 @@ class Triangle : public Forme
 public:
 
     // Constructeurs
-    // Pour aller au bout du raisonnement, le passage par référence const est plus
-    // rapide et plus sûr (pas de modification possible des objets, pas de copies inutiles)
+    // Pour aller au bout du raisonnement, le passage par rï¿½fï¿½rence const est plus
+    // rapide et plus sï¿½r (pas de modification possible des objets, pas de copies inutiles)
     Triangle(const Point& s1, const Point& s2, const Point& s3, const std::string& label);
     Triangle();
     Triangle(const Triangle &other);
@@ -23,12 +23,13 @@ public:
     // Affectation
     Triangle &operator=(const Triangle &other);
 
-    // Méthodes virtuelles que l'on affine
+    // Mï¿½thodes virtuelles que l'on affine
     virtual float Surface() const override;
     virtual float Perimeter() const override;
     virtual void Display() const override;
+    virtual void Draw() override;
 
-// Pourrait aussi être "protected:"
+// Pourrait aussi ï¿½tre "protected:"
 private:
     // On pourrait prendre un tableau de 3 Points aussi
     Point m_p1;

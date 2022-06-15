@@ -7,12 +7,12 @@
 
 using namespace std;    // jamais dans un .h(pp) !
 
-// Déclaration de l'attribut statique pour réservation mémoire
+// Dï¿½claration de l'attribut statique pour rï¿½servation mï¿½moire
 // static
 unsigned int Cercle::m_circleCount = 0;
 
-// Constructeur riche. On appelle une version spécifique du construceur
-// de Forme et on initilise le centre et le radius de même
+// Constructeur riche. On appelle une version spï¿½cifique du construceur
+// de Forme et on initilise le centre et le radius de mï¿½me
 Cercle::Cercle(Point centre, int radius, string label) :
     Forme(label),
     m_center(centre),
@@ -33,8 +33,8 @@ Cercle::Cercle(Point centre, int radius, string label)
 }
 */
 
-// constructeur par défaut, le constructeur par défaut de
-// Forme est automatiquement appelé
+// constructeur par dï¿½faut, le constructeur par dï¿½faut de
+// Forme est automatiquement appelï¿½
 Cercle::Cercle()
 {
     cout << "Cercle (defaut)" << endl;
@@ -71,7 +71,7 @@ float Cercle::Surface() const
     return m_radius * m_radius * (float)M_PI;
 }
 
-// Calcul de périmètre
+// Calcul de pï¿½rimï¿½tre
 float Cercle::Perimeter() const
 {
     return m_radius * (float)M_PI * 2.f;
@@ -85,3 +85,5 @@ void Cercle::Display() const
         << " P=" << Perimeter() << " S=" << Surface()
         << endl;
 }
+
+void Cercle::Draw(){}

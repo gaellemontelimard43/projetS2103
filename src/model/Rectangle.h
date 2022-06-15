@@ -22,30 +22,31 @@ public:                                     // interface publique de la classe
     void SetHeight(int h);
 
     // Getters
-    const Point& GetCorner() const;         // On retourne une référence const sur m_corner
+    const Point& GetCorner() const;         // On retourne une rï¿½fï¿½rence const sur m_corner
     int GetWidth() const;
     int GetHeight() const;
 
     // Fonction utilitaires
-    void Move(int dX, int dY);                  // déplace le rectangle
-    bool IsInside(const Rectangle &r) const;    // vérifie l'inclusion
+    void Move(int dX, int dY);                  // dï¿½place le rectangle
+    bool IsInside(const Rectangle &r) const;    // vï¿½rifie l'inclusion
 
-    // Ici, on affiche la méthode Diplay de Forme
-    virtual void Display() const override;      // affiche les coordonnées du rectangle
+    // Ici, on affiche la mï¿½thode Diplay de Forme
+    virtual void Display() const override;      // affiche les coordonnï¿½es du rectangle
 
-    // On rajoute les autres méthodes virtuelles
+    // On rajoute les autres mï¿½thodes virtuelles
     virtual float Surface() const override;
     virtual float Perimeter() const override;
+    virtual void Draw() override;
 
-    // Méthode statique pour le comptage de points
+    // Mï¿½thode statique pour le comptage de points
     static int GetRectCount();              // retourne le nombre de rectangles
 
-private: // invisible à l?utilisateur de la classe
+private: // invisible ï¿½ l?utilisateur de la classe
     Point m_corner;         // Le point
     int m_w;                // les dimensions
     int m_h;                // du rectangle
 
-    static unsigned int m_rectCount; // donn´ee commune à tous les rectangles
+    static unsigned int m_rectCount; // donnï¿½ee commune ï¿½ tous les rectangles
 };
 
 #endif // __RECTANGLE_H__

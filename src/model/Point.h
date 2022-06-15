@@ -39,6 +39,7 @@ public:                        // interface publique de la classe
     bool XEgalY() const;
     float Distance(const Point &p) const;
     float Distance(const Point *p) const;
+    virtual void Draw();
 
     // M�thode statique
     static int GetPointCount(); // retourne le nombre de point
