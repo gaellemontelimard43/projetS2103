@@ -159,7 +159,7 @@ void MyFrame::ControleurClick(int ID, int m_ClickNumber) {
 		case 1:
 			m_drawingPanel->m_listclicks[1] = m_drawingPanel->m_mousePoint ;
 			if((ID ==1)||(ID == 2)){
-				ControleurBouton(ID);
+			m_drawingPanel->onPaint(m)	;
 			}
 		break;
 
@@ -170,8 +170,5 @@ void MyFrame::ControleurClick(int ID, int m_ClickNumber) {
 				ControleurBouton(ID);
 			}
 		break;
-
-		default:
-			//compteur = 0 ;
 	}
 }
