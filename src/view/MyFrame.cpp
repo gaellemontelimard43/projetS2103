@@ -120,7 +120,7 @@ void MyFrame::OnSize(wxSizeEvent &event)
 }
 
 //------------------------------------------------------------------------
-void MyFrame::Controleur(int ID) {
+void MyFrame::ControleurBouton(int ID) {
 //------------------------------------------------------------------------
     switch(ID){
 
@@ -142,6 +142,17 @@ void MyFrame::Controleur(int ID) {
 		case 4:
         //rectangle
         break; 
+
+    }   
+}
+
+
+//------------------------------------------------------------------------
+void MyFrame::ControleurClick(int m_ClickNumber) {
+//------------------------------------------------------------------------
+    switch(){
+
+        
 
     }   
 }
