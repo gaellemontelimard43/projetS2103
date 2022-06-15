@@ -15,6 +15,8 @@
 
 #define WIDGET_PANEL_WIDTH	150
 
+int compteur = 0 ;
+
 //************************************************************************
 //************************************************************************
 // MyDrawingPanel class (where drawings are displayed)
@@ -46,6 +48,10 @@ void MyDrawingPanel::OnMouseMove(wxMouseEvent &event)
 	m_mousePoint.x = event.m_x ;
 	m_mousePoint.y = event.m_y ;
 	Refresh() ;	// send an event that calls the OnPaint method
+
+	if(compteur == 0){
+		m_listclicks[0] = m_mousePoint ; 
+	}
 }
 
 //------------------------------------------------------------------------
