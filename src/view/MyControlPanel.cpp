@@ -31,8 +31,6 @@ enum
 	ID_COMBO1,
 };
 
-
-
 //------------------------------------------------------------------------
 MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 //------------------------------------------------------------------------
@@ -97,8 +95,9 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 void MyControlPanel::OnLigne(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-
-	controleur(ID_LIGNE);
+	int alpha = 0 ;
+	MyFrame* frame = (MyFrame*)GetParent() ;
+	frame->Controleur(alpha,ID_LIGNE);
 	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
 	
 }
@@ -108,7 +107,8 @@ void MyControlPanel::OnLigne(wxCommandEvent &event)
 void MyControlPanel::OnCercle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-	controleur(ID_CERCLE);
+	
+	Controleur(ID_CERCLE);
 	wxMessageBox(wxT("clique deux fois pour avoir un cercle !")) ;
 }
 
@@ -116,7 +116,7 @@ void MyControlPanel::OnCercle(wxCommandEvent &event)
 void MyControlPanel::OnTriangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-	controleur(ID_TRIANGLE);
+	Controleur(ID_TRIANGLE);
 	wxMessageBox(wxT("clique trois fois pour avoir un triangle !")) ;
 }
 
@@ -125,7 +125,7 @@ void MyControlPanel::OnRectangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 
-	controleur(ID_RECTANGLE);
+	Controleur(ID_RECTANGLE);
 	
 	wxMessageBox(wxT("clique quatre fois pour avoir un rectangle !")) ;
 }

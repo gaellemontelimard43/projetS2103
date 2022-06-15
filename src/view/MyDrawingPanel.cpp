@@ -33,8 +33,8 @@ MyDrawingPanel::MyDrawingPanel(wxWindow *parent) : wxPanel(parent)
 	Bind(wxEVT_MOTION, &MyDrawingPanel::OnMouseMove, this);
 	Bind(wxEVT_LEFT_DOWN, &MyDrawingPanel::OnMouseLeftDown, this);
 	Bind(wxEVT_PAINT, &MyDrawingPanel::OnPaint, this) ;
-	m_onePoint.x = (w-WIDGET_PANEL_WIDTH)/2 ;
-	m_onePoint.y = h/2 ;
+	m_listclicks.x = (w-WIDGET_PANEL_WIDTH)/2 ;
+	m_listclicks.y = h/2 ;
 	m_mousePoint = m_onePoint ;
 }
 

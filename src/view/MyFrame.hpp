@@ -33,7 +33,7 @@ protected:
 	void OnSaveFile(wxCommandEvent & WXUNUSED(event)) ;
 	void OnClose(wxCloseEvent& event) ;
 	void OnSize(wxSizeEvent &event) ;
-	void Controler(int m_ClickNumber, int ID);
+	void Controleur(int m_ClickNumber, int ID);
 
 	MyControlPanel *m_controlPanel; // the panel with controls
 	MyDrawingPanel *m_drawingPanel; // the panel in which we draw
