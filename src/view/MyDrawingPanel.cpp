@@ -48,10 +48,6 @@ void MyDrawingPanel::OnMouseMove(wxMouseEvent &event)
 	m_mousePoint.x = event.m_x ;
 	m_mousePoint.y = event.m_y ;
 	Refresh() ;	// send an event that calls the OnPaint method
-
-	if(compteur == 0){
-		m_listclicks[0] = m_mousePoint ; 
-	}
 }
 
 //------------------------------------------------------------------------
@@ -62,6 +58,24 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 	m_onePoint.x = event.m_x ;
 	m_onePoint.y = event.m_y ;
 	//Refresh() ; // send an event that calls the OnPaint method
+
+		switch(compteur){
+
+		case 0:
+			m_listclicks[0] = m_mousePoint ; 
+		break; 
+
+		case 1:
+			m_listclicks[1] = m_mousePoint ; 
+		break;
+
+		case 2:
+			m_listckicks[2] = m_mousePoint ;
+		break;
+
+		default:
+			compteur = 0 ;
+	}
 }
 
 //------------------------------------------------------------------------
