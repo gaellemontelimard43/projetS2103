@@ -57,24 +57,42 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 	m_onePoint.y = event.m_y ;
 	//Refresh() ; // send an event that calls the OnPaint method
 
-	/*switch(Id_Bouton){
+	switch(Id_Bouton){
 		case 1: 
-			ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
-			m_ClickNumber ++ ;
+			if(m_ClickNumber = 0){
+				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber ++ ;
+			}else{
+				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber = 0 ;
+			}
 		break;
 
-		case2:
+		case 2:
+			if(m_ClickNumber = 0){
+				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber ++ ;
+			}else{
+				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber = 0 ;
+			}
 
 		break;
 
-		case3:
+		case 3:
 
 		break;
 
-		case4:
-
+		case 4:
+			if(m_ClickNumber = 0){
+				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber ++ ;
+			}else{
+				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber = 0 ;
+			}
 		break;
-	}*/
+	}
 }
 
 //------------------------------------------------------------------------
@@ -103,7 +121,9 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 		dc.DrawCircle(m_listclicks[0],radius/2);
 	}*/
 
-	dc.DrawLine(m_mousePoint, m_onePoint) ;
+	if(Id_Bouton == ID_LINE){dc.DrawLine(m_mousePoint, m_onePoint) ;}
+	if(Id_Bouton == ID_LINE){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;}
+
 	dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
 	dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
 
