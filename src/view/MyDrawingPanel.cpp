@@ -44,9 +44,10 @@ void MyDrawingPanel::OnMouseMove(wxMouseEvent &event)
 //------------------------------------------------------------------------
 // called when the mouse is moved
 {
+	MyFrame* frame = (MyFrame*)GetParent() ;
 	m_mousePoint.x = event.m_x ;
 	m_mousePoint.y = event.m_y ;
-	Refresh() ;	// send an event that calls the OnPaint method
+	frame->Refresh() ;	// send an event that calls the OnPaint method
 }
 
 //------------------------------------------------------------------------
@@ -55,17 +56,18 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 // called when the mouse left button is pressed
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
-	MyControlPanel* panel = (MyControlPanel*)GetParent() ;
+	MyControlPanel* control = frame->m_controlPanel ;
 	m_onePoint.x = event.m_x ;
 	m_onePoint.y = event.m_y ;
 	//Refresh() ; // send an event that calls the OnPaint method
 
 
-	switch(panel->Id_Bouton){
+	switch(control->Id_Bouton){
+		std::cerr << control->Id_Bouton << std::endl ;
 		case 1: 
-			if(m_ClickNumber = 0){
-				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+			if(m_ClickNumber == 0){
 				m_ClickNumber ++ ;
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
@@ -73,9 +75,9 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 		break;
 
 		case 2:
-			if(m_ClickNumber = 0){
-				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+			if(m_ClickNumber == 0){
 				m_ClickNumber ++ ;
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
@@ -84,14 +86,14 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 		break;
 
 		case 3:
-			if(m_ClickNumber = 0){
-				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+			if(m_ClickNumber == 0){
 				m_ClickNumber ++ ;
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 			}else if (m_ClickNumber = 1){
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
-				m_ClickNumber = ++ ;
-			}else{
-				else if (m_ClickNumber = 1){
+				m_ClickNumber ++ ;
+			}else {
+
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
 			}
@@ -99,9 +101,9 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 		break;
 
 		case 4:
-			if(m_ClickNumber = 0){
-				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+			if(m_ClickNumber == 0){
 				m_ClickNumber ++ ;
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
@@ -117,9 +119,10 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 // when the panel is resized
 // You have to call OnPaint with Refresh() when you need to update the panel content
 {
+	std::cerr << "Rentrons dans paint" << std::endl ;
 	// read the control values
 	MyFrame* frame =  (MyFrame*)GetParent() ;
-	MyControlPanel* panel = (MyControlPanel*)GetParent() ;
+	MyControlPanel* control = frame->m_controlPanel ;
 	int radius = frame->GetControlPanel()->GetSliderValue() ;
 	bool check = frame->GetControlPanel()->GetCheckBoxValue() ;
 
@@ -137,11 +140,11 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 		dc.DrawCircle(m_listclicks[0],radius/2);
 	}*/
 	//if(frame->Id_Bouton == 1){dc.DrawLine(m_mousePoint, m_onePoint) ;}
-	if(panel->Id_Bouton == 1){dc.DrawLine(140,140,150,150) ;}
-	if(panel->Id_Bouton == 1){dc.DrawLine(*m_listclicks[0], *m_listclicks[1]) ;}
+	if(control->Id_Bouton == 1){dc.DrawLine(140,140,150,150) ;}
+	if(control->Id_Bouton == 1){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;}
 
-	dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
-	dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
+	//dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
+	//dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
 
 	
 	if (check)

@@ -17,6 +17,8 @@
 #define WIDGET_Y0			30
 #define WIDGET_Y_STEP		50
 
+
+
 enum
 {
 	ID_LIGNE = 1,
@@ -96,13 +98,13 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnLigne(wxCommandEvent &event)
+void MyControlPanel::OnLigne(wxCommandEvent &event) //boutonLigne
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
 	Id_Bouton = 1 ;
+	//frame->m_ClickNumber = 0 ;
 	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
-	frame->RefreshDrawing() ;	// update the drawing panel
 }
 
 

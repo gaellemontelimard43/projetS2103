@@ -126,18 +126,18 @@ void MyFrame::ControleurClick(int m_ClickNumber, int x, int y) {
     	switch(m_ClickNumber){
 
 		case 1:
-			m_drawingPanel->m_listclicks[0] -> x = x ; 
-			m_drawingPanel->m_listclicks[0] -> y = y ; 
+			m_drawingPanel->m_listclicks[0].x = x ; 
+			m_drawingPanel->m_listclicks[0].y = y ; 
 		break; 
 
 		case 2:
-			m_drawingPanel->m_listclicks[1] -> x = x ; 
-			m_drawingPanel->m_listclicks[1] -> y = y ; 
+			m_drawingPanel->m_listclicks[1].x = x ; 
+			m_drawingPanel->m_listclicks[1].y = y ; 
 		break;
 
 		case 3:
-			m_drawingPanel->m_listclicks[2] -> x = x ; 
-			m_drawingPanel->m_listclicks[2] -> y = y ; 
+			m_drawingPanel->m_listclicks[2].x = x ; 
+			m_drawingPanel->m_listclicks[2].y = y ; 
 		break; 
 	}
 }

@@ -26,6 +26,8 @@ public:
 	MyControlPanel* GetControlPanel(){return m_controlPanel ;} ;
 	void RefreshDrawing(){m_drawingPanel->Refresh() ;} ;
 	void ControleurClick(int m_ClickNumber, int x, int y);
+	MyControlPanel *m_controlPanel; // the panel with controls
+	MyDrawingPanel *m_drawingPanel; // the panel in which we draw
 
 protected:
 	void OnQuit(wxCommandEvent& event);
@@ -35,9 +37,6 @@ protected:
 	void OnClose(wxCloseEvent& event) ;
 	void OnSize(wxSizeEvent &event) ;
 	
-
-	MyControlPanel *m_controlPanel; // the panel with controls
-	MyDrawingPanel *m_drawingPanel; // the panel in which we draw
 };
 
 #endif
