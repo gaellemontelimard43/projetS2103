@@ -23,6 +23,8 @@ public:
 	MyDrawingPanel( wxWindow *parent ) ;
 	void OpenFile(wxString fileName) ;
 	void SaveFile(wxString fileName) ;
+
+	
 	wxPoint m_listclicks[3];
 	int m_ClickNumber;
 
