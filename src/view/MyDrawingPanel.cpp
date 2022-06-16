@@ -10,6 +10,7 @@
 #include <wx/bitmap.h>
 
 #include "MyDrawingPanel.hpp"
+#include "MyControlPanel.hpp"
 #include "MyFrame.hpp"
 #include "../model/Point.h"
 
@@ -53,27 +54,28 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 //------------------------------------------------------------------------
 // called when the mouse left button is pressed
 {
+	MyFrame* frame = (MyFrame*)GetParent() ;
 	m_onePoint.x = event.m_x ;
 	m_onePoint.y = event.m_y ;
 	//Refresh() ; // send an event that calls the OnPaint method
 
-	switch(Id_Bouton){
+	switch(frame->Id_Bouton){
 		case 1: 
 			if(m_ClickNumber = 0){
-				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber ++ ;
 			}else{
-				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
 			}
 		break;
 
 		case 2:
 			if(m_ClickNumber = 0){
-				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber ++ ;
 			}else{
-				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
 			}
 
@@ -85,10 +87,10 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 
 		case 4:
 			if(m_ClickNumber = 0){
-				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber ++ ;
 			}else{
-				ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
 			}
 		break;
@@ -120,9 +122,8 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	if( ==2){
 		dc.DrawCircle(m_listclicks[0],radius/2);
 	}*/
-
-	if(Id_Bouton == ID_LINE){dc.DrawLine(m_mousePoint, m_onePoint) ;}
-	if(Id_Bouton == ID_LINE){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;}
+	if(frame->Id_Bouton == frame->ID_LINE){dc.DrawLine(m_mousePoint, m_onePoint) ;}
+	if(frame->Id_Bouton == frame->ID_LINE){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;}
 
 	dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
 	dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
