@@ -35,6 +35,7 @@ protected:
 	void OnSaveFile(wxCommandEvent & WXUNUSED(event)) ;
 	void OnClose(wxCloseEvent& event) ;
 	void OnSize(wxSizeEvent &event) ;
+	int Id_Bouton = 0 ;
 	
 
 	MyControlPanel *m_controlPanel; // the panel with controls

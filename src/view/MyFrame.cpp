@@ -119,6 +119,8 @@ void MyFrame::OnSize(wxSizeEvent &event)
 	m_drawingPanel->SetSize(wxRect(wxPoint(WIDGET_PANEL_WIDTH,0), wxPoint(w, h))) ;
 }
 
+
+
 //------------------------------------------------------------------------
 void MyFrame::ControleurBouton(int ID) {
 //------------------------------------------------------------------------
@@ -126,49 +128,46 @@ void MyFrame::ControleurBouton(int ID) {
 
         case 1: 
         //ligne 
-			
+			Id_Bouton = ID_LIGNE ;
         break;
 
         case 2:
         //cercle
-			
+			Id_Bouton = ID_CERCLE ;
         break;
 
         case 3:
         //triangle
-		
+			Id_Bouton = ID_TRIANGLE ;
         break; 
 
 		case 4:
         //rectangle
+			Id_Bouton = ID_RECTANGLE ;
         break; 
 
     }   
 }
 
-/*
+
 //------------------------------------------------------------------------
-void MyFrame::ControleurClick(int ID, int m_ClickNumber) {
+void MyFrame::ControleurClick(int m_ClickNumber, int x, int y) {
 //------------------------------------------------------------------------
     	switch(m_ClickNumber){
 
-		case 0:
-			m_drawingPanel->m_listclicks[0] = m_drawingPanel->m_mousePoint ; 
-		break; 
-
 		case 1:
-			m_drawingPanel->m_listclicks[1] = m_drawingPanel->m_mousePoint ;
-			if((ID ==1)||(ID == 2)){
-			m_drawingPanel->onPaint(m);
-			}
-		break;
+			m_drawingPanel->m_listclicks[0] -> x = x ; 
+			m_drawingPanel->m_listclicks[0] -> y = y ; 
+		break; 
 
 		case 2:
-			m_drawingPanel->m_listckicks[2] = m_drawingPanel->m_mousePoint ;
-			m_drawingPanel->m_listclicks[1] = m_drawingPanel->m_mousePoint ;
-			if((ID == 3)||(ID == 4)){
-				ControleurBouton(ID);
-			}
+			m_drawingPanel->m_listclicks[1] -> x = x ; 
+			m_drawingPanel->m_listclicks[1] -> y = y ; 
+		break;
+
+		case 3:
+			m_drawingPanel->m_listclicks[2] -> x = x ; 
+			m_drawingPanel->m_listclicks[2] -> y = y ; 
 		break; 
 	}
-}*/
+}
