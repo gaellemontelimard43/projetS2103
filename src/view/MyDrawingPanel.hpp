@@ -23,12 +23,12 @@ public:
 	MyDrawingPanel( wxWindow *parent ) ;
 	void OpenFile(wxString fileName) ;
 	void SaveFile(wxString fileName) ;
+	wxPoint* m_listclicks[2];
 
 private:
 	void OnMouseMove(wxMouseEvent &event) ;
 	void OnMouseLeftDown(wxMouseEvent &event) ;
 	void OnPaint(wxPaintEvent &event) ;
-	wxPoint m_listclicks[2];
 	wxPoint m_mousePoint ;
 	wxPoint m_onePoint ;
 	int m_ClickNumber;

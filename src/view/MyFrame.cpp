@@ -120,7 +120,7 @@ void MyFrame::OnSize(wxSizeEvent &event)
 }
 
 
-ID = GetControlPanel()->ControleurBouton()
+int ID = MyControlPanel->ControleurBouton() ;
 //------------------------------------------------------------------------
 void MyFrame::ControleurBouton(int ID) {
 //------------------------------------------------------------------------
@@ -128,23 +128,26 @@ void MyFrame::ControleurBouton(int ID) {
 
         case 1: 
         //ligne 
-			Id_Bouton = ID_LIGNE ;
+			Id_Bouton = 1;
         break;
 
         case 2:
         //cercle
-			Id_Bouton = ID_CERCLE ;
+			Id_Bouton = 2;
         break;
 
         case 3:
         //triangle
-			Id_Bouton = ID_TRIANGLE ;
+			Id_Bouton = 3;
         break; 
 
 		case 4:
         //rectangle
-			Id_Bouton = ID_RECTANGLE ;
+			Id_Bouton = 4;
         break; 
+
+		default:
+			Id_Bouton = 0;
 
     }   
 }
