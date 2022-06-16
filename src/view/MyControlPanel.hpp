@@ -26,6 +26,7 @@ public:
 	int GetSliderValue() {return m_slider->GetValue() ;} ;
 	bool GetCheckBoxValue() {return m_checkBox->GetValue() ;} ;
 	const char* forme[4] = {"Ligne", "Rectangle", "Carré", "Cercle"};
+	int Id_Bouton = 0 ;
 
 private:
 	void OnLigne(wxCommandEvent &event) ;
@@ -43,7 +44,6 @@ private:
 	wxRadioButton* m_radioButton2;
 	wxComboBox* m_comboBox ;
 	wxArrayString* m_arrItems ;
-	int Id_Bouton = 0;
 
 };
 #endif
