@@ -28,6 +28,7 @@ public:
 	void ControleurClick(int m_ClickNumber, int x, int y);
 	MyControlPanel *m_controlPanel; // the panel with controls
 	MyDrawingPanel *m_drawingPanel; // the panel in which we draw
+	void Miseazero();
 
 protected:
 	void OnQuit(wxCommandEvent& event);

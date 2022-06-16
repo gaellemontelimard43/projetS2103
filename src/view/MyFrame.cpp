@@ -141,3 +141,14 @@ void MyFrame::ControleurClick(int m_ClickNumber, int x, int y) {
 		break; 
 	}
 }
+
+//------------------------------------------------------------------------
+void MyFrame::Miseazero(){
+//------------------------------------------------------------------------
+        m_drawingPanel->m_listclicks[0].x = 0 ; 
+		m_drawingPanel->m_listclicks[0].y = 0 ; 
+		m_drawingPanel->m_listclicks[1].x = 0 ; 
+		m_drawingPanel->m_listclicks[1].y = 0 ; 
+		m_drawingPanel->m_listclicks[2].x = 0 ; 
+		m_drawingPanel->m_listclicks[2].y = 0 ; 
+}
