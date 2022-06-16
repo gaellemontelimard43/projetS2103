@@ -1,6 +1,26 @@
 #include <iostream>
 #include "Forme.h"
 
+#include <iostream>
+#include <cstdlib>
+#include <cmath> // pour sqrt
+
+#include "Point.h"
+#include "wx/wxprec.h"
+
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
+#include<wx/filedlg.h>
+#include <wx/image.h>
+#include <wx/file.h>
+#include <wx/bitmap.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 using namespace std;
 
 Forme::Forme()

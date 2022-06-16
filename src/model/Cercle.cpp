@@ -2,6 +2,26 @@
 #include <iostream>
 #include <cstdlib>
 
+#include <iostream>
+#include <cstdlib>
+#include <cmath> // pour sqrt
+
+#include "Point.h"
+#include "wx/wxprec.h"
+
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
+#include<wx/filedlg.h>
+#include <wx/image.h>
+#include <wx/file.h>
+#include <wx/bitmap.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 #define _USE_MATH_DEFINES   // To include PI value
 #include <math.h>
 
@@ -87,7 +107,8 @@ void Cercle::Display() const
 }
 
 void Cercle::Draw(wxPaintDC& dc){
-    dc.DrawCircle
+
+    dc.DrawCircle(m_center.x,m_center.y,m_radius);
 }
 
 	m_dessin.drawAll(wxPaintDC& dc); //boucle sur toutes les formes pour se dessiner

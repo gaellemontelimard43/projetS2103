@@ -4,6 +4,26 @@
 #include <cstdlib>
 #include <cmath>
 
+#include <iostream>
+#include <cstdlib>
+#include <cmath> // pour sqrt
+
+#include "Point.h"
+#include "wx/wxprec.h"
+
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
+#include<wx/filedlg.h>
+#include <wx/image.h>
+#include <wx/file.h>
+#include <wx/bitmap.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 using namespace std; // Jamais dans un point h(pp) !
 
 // R�servation m�moire de l'attribut statique de la classe Triangle
@@ -82,4 +102,6 @@ void Triangle::Display() const
               << "(" << m_p3.GetX() << "," << m_p3.GetY() << ")"
               << " P=" << Perimeter() << " S=" << Surface() << std::endl;
 }
-void Triangle::Draw(wxPaintDC& dc){}
+void Triangle::Draw(wxPaintDC& dc){
+
+}

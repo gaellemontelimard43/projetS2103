@@ -5,6 +5,18 @@
 #include "Point.h"
 #include <iostream>
 
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
+#include<wx/filedlg.h>
+#include <wx/image.h>
+#include <wx/file.h>
+#include <wx/bitmap.h>
+#include <iostream>
+#include <string>
+
+
 class Cercle : public Forme
 {
 public:
