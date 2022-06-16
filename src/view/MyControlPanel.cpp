@@ -26,9 +26,9 @@ enum
 	ID_RADIUS,
 	ID_EPAISSEUR,
 	ID_COORDONNEES,
-	ID_COULEUR1,
-	ID_COULEUR2,
-	ID_COMBO1,
+	ID_COULEUR_CONTROLEUR1,
+	ID_COULEUR_CONTROLEUR2,
+	ID_COULEUR_FORME,
 };
 
 
@@ -59,40 +59,40 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	Bind(wxEVT_BUTTON, &MyControlPanel::OnRectangle, this, ID_RECTANGLE) ;
 	
 	y+= WIDGET_Y_STEP ;
-	wxStaticText* text1 = new wxStaticText(this, wxID_ANY, wxT("Radius"), wxPoint(10, y)) ;
-	
-	y+= 15 ;
-	m_slider = new wxSlider(this, ID_RADIUS, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
-	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_RADIUS) ;
-
-	y+= WIDGET_Y_STEP ;
-	wxStaticText* text2 = new wxStaticText(this, wxID_ANY, wxT("épaisseur trait"), wxPoint(10, y)) ;
+	wxStaticText* text1 = new wxStaticText(this, wxID_ANY, wxT("Epaisseur du trait"), wxPoint(10, y)) ;
 	
 	y+= 15 ;
 	m_slider = new wxSlider(this, ID_EPAISSEUR, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
 	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_EPAISSEUR) ;
+
+	y+= WIDGET_Y_STEP ;
+	wxStaticText* text2 = new wxStaticText(this, wxID_ANY, wxT("Radius"), wxPoint(10, y)) ;
+	
+	y+= 15 ;
+	m_slider = new wxSlider(this, ID_RADIUS, 10, 2, 100, wxPoint(10, y), wxSize(100,20)) ;
+	Bind(wxEVT_SCROLL_THUMBTRACK, &MyControlPanel::OnSlider, this, ID_RADIUS) ;
 	
 	y+= WIDGET_Y_STEP ;
 	m_checkBox = new wxCheckBox(this, ID_COORDONNEES, "Show (x,y)", wxPoint(10, y), wxSize(100,20)) ;
 	Bind(wxEVT_CHECKBOX, &MyControlPanel::OnCoordonnees, this, ID_COORDONNEES) ;	
 
 	y+= WIDGET_Y_STEP ;
-	m_radioButton = new wxRadioButton(this, ID_COULEUR1, "V1", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
-	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR1) ;
+	m_radioButton = new wxRadioButton(this, ID_COULEUR_CONTROLEUR1, "Standard", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR_CONTROLEUR1) ;
 	//y+= WIDGET_Y_STEP ;
-	m_radioButton2 = new wxRadioButton(this, ID_COULEUR2, "V2", wxPoint(60, y), wxSize(100,20),0,wxDefaultValidator) ;
-	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR2) ;
+	m_radioButton2 = new wxRadioButton(this, ID_COULEUR_CONTROLEUR2, "Eco", wxPoint(92, y), wxSize(100,20),0,wxDefaultValidator) ;
+	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR_CONTROLEUR2) ;
 
 	//wxListBox (wxWindow *parent, wxWindowID id, 
 	//const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, int n=0, const wxString choices[]=NULL, long style=0, const wxValidator &validator=wxDefaultValidator, const wxString &name=wxListBoxNameStr)
 	
-	//m_arrItems.Add( wxT("line") );
+	//m_comboBox->Append("Rouge");
 	//m_arrItems.Add( wxT("rectangle") );
 	//m_arrItems.Add( wxT("triangle") );
 
-	//y+= WIDGET_Y_STEP ;
-	//m_comboBox = new wxComboBox(this, ID_COMBO1, "forme", wxPoint(10, y), wxSize(100,20),3,m_arrItems,0,wxDefaultValidator,"comboBox");
-	//Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COMBO1) ;
+	y+= WIDGET_Y_STEP ;
+	m_comboBox = new wxComboBox(this, ID_COULEUR_FORME, "Couleurs", wxPoint(10, y), wxSize(100,20),0,NULL,0,wxDefaultValidator,"comboBox");
+	Bind(wxEVT_COMBOBOX, &MyControlPanel::OnComboBox, this, ID_COULEUR_FORME) ;
 }
 
 //------------------------------------------------------------------------
