@@ -56,6 +56,25 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 	m_onePoint.x = event.m_x ;
 	m_onePoint.y = event.m_y ;
 	//Refresh() ; // send an event that calls the OnPaint method
+
+	switch(Id_Bouton){
+		case 1: 
+			ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+			m_ClickNumber ++ ;
+		break;
+
+		case2:
+
+		break;
+
+		case3:
+
+		break;
+
+		case4:
+
+		break;
+	}
 }
 
 //------------------------------------------------------------------------
