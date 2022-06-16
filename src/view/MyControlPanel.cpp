@@ -100,8 +100,9 @@ void MyControlPanel::OnLigne(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
-	frame->ControleurBouton(ID_LIGNE);
 	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
+	frame->ControleurBouton(ID_LIGNE);
+	
 	
 }
 
