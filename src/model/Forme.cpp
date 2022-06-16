@@ -21,8 +21,6 @@
 
 using namespace std;
 
-using namespace std;
-
 Forme::Forme()
 {
     cout << "Forme (defaut)" << endl;

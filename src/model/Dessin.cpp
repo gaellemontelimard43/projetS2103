@@ -15,5 +15,5 @@ using namespace std;
 
 class Dessin 
 {
-    vector<forme>Vecteurs ;
+    vector<Forme*>forme;
 }
