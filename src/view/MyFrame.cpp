@@ -120,7 +120,7 @@ void MyFrame::OnSize(wxSizeEvent &event)
 }
 
 
-
+ID = GetControlPanel()->ControleurBouton()
 //------------------------------------------------------------------------
 void MyFrame::ControleurBouton(int ID) {
 //------------------------------------------------------------------------
