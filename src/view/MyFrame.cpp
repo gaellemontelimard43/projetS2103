@@ -124,7 +124,7 @@ void MyFrame::OnSize(wxSizeEvent &event)
 //------------------------------------------------------------------------
 void MyFrame::ControleurBouton(int ID) {
 //------------------------------------------------------------------------
-    switch(ID){
+    /*switch(ID){
 
         case 1: 
         //ligne 
@@ -146,7 +146,7 @@ void MyFrame::ControleurBouton(int ID) {
 			Id_Bouton = ID_RECTANGLE ;
         break; 
 
-    }   
+    }   */
 }
 
 
