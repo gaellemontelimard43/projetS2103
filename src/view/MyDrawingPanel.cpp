@@ -64,8 +64,8 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 	switch(control->Id_Bouton){
 		case 1: 
 			if(m_ClickNumber == 0){
-				m_ClickNumber ++ ;
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
@@ -74,8 +74,8 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 
 		case 2:
 			if(m_ClickNumber == 0){
-				m_ClickNumber ++ ;
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;
@@ -85,8 +85,8 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 
 		case 3:
 			if(m_ClickNumber == 0){
-				m_ClickNumber ++ ;
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber ++ ;
 			}else if (m_ClickNumber = 1){
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber ++ ;
@@ -100,8 +100,8 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 
 		case 4:
 			if(m_ClickNumber == 0){
-				m_ClickNumber ++ ;
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				m_ClickNumber = 0 ;

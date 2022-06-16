@@ -24,6 +24,7 @@ public:
 	void OpenFile(wxString fileName) ;
 	void SaveFile(wxString fileName) ;
 	wxPoint m_listclicks[3];
+	int m_ClickNumber;
 
 private:
 	void OnMouseMove(wxMouseEvent &event) ;
@@ -31,7 +32,6 @@ private:
 	void OnPaint(wxPaintEvent &event) ;
 	wxPoint m_mousePoint ;
 	wxPoint m_onePoint ;
-	int m_ClickNumber;
 };
 
 #endif
