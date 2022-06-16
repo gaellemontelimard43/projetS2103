@@ -102,6 +102,7 @@ void MyControlPanel::OnLigne(wxCommandEvent &event)
 	MyFrame* frame = (MyFrame*)GetParent() ;
 	Id_Bouton = 1 ;
 	wxMessageBox(wxT("clique deux fois pour avoir une ligne!")) ;
+	frame->RefreshDrawing() ;	// update the drawing panel
 }
 
 
@@ -109,9 +110,10 @@ void MyControlPanel::OnLigne(wxCommandEvent &event)
 void MyControlPanel::OnCercle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-	MyFrame* frame = (MyFrame*)GetParent() ;
+	MyFrame* frame = (MyFrame*)GetParent();
 	Id_Bouton = 2 ;
 	wxMessageBox(wxT("clique deux fois pour avoir un cercle !")) ;
+	frame->RefreshDrawing() ;	// update the drawing panel
 }
 
 //------------------------------------------------------------------------
@@ -121,6 +123,7 @@ void MyControlPanel::OnTriangle(wxCommandEvent &event)
 	MyFrame* frame = (MyFrame*)GetParent() ;
 	Id_Bouton = 3 ;
 	wxMessageBox(wxT("clique trois fois pour avoir un triangle !")) ;
+	frame->RefreshDrawing() ;	// update the drawing panel
 }
 
 //------------------------------------------------------------------------
@@ -130,6 +133,7 @@ void MyControlPanel::OnRectangle(wxCommandEvent &event)
 	MyFrame* frame = (MyFrame*)GetParent() ;
 	Id_Bouton = 4 ;
 	wxMessageBox(wxT("clique quatre fois pour avoir un rectangle !")) ;
+	frame->RefreshDrawing() ;	// update the drawing panel
 }
 
 //------------------------------------------------------------------------
@@ -153,7 +157,7 @@ void MyControlPanel::OnCouleur(wxCommandEvent &event)
 void MyControlPanel::OnComboBox(wxCommandEvent &event){
 	
 	MyFrame* frame = (MyFrame*)GetParent() ;
-
+	frame->RefreshDrawing() ;	// update the drawing panel
 }
 
 //------------------------------------------------------------------------
