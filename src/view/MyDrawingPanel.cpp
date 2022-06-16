@@ -122,7 +122,7 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	// read the control values
 	MyFrame* frame =  (MyFrame*)GetParent() ;
 	MyControlPanel* control = frame->m_controlPanel ;
-	int radius = frame->GetControlPanel()->GetSliderValue() ;
+	int radius = m_listclicks[0].x + m_listclicks[1].x ;
 	bool check = frame->GetControlPanel()->GetCheckBoxValue() ;
 
 	// then paint
@@ -142,6 +142,7 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	if(m_listclicks[1].x == 0){}
 	else if(control->Id_Bouton == 1){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;} //check si valeur OKAY 
 	else if(control->Id_Bouton == 2){dc.DrawCircle(m_listclicks[0], radius/2);}
+
 	//dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
 	//dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
 
