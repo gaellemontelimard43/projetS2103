@@ -153,7 +153,7 @@ void MyFrame::ControleurBouton(int ID) {
 //------------------------------------------------------------------------
 void MyFrame::ControleurClick(int m_ClickNumber, int x, int y) {
 //------------------------------------------------------------------------
-    	switch(m_ClickNumber){
+    	/*switch(m_ClickNumber){
 
 		case 1:
 			m_drawingPanel->m_listclicks[0] -> x = x ; 
@@ -169,5 +169,5 @@ void MyFrame::ControleurClick(int m_ClickNumber, int x, int y) {
 			m_drawingPanel->m_listclicks[2] -> x = x ; 
 			m_drawingPanel->m_listclicks[2] -> y = y ; 
 		break; 
-	}
+	}*/
 }
