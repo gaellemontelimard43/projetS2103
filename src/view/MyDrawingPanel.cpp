@@ -44,10 +44,9 @@ void MyDrawingPanel::OnMouseMove(wxMouseEvent &event)
 //------------------------------------------------------------------------
 // called when the mouse is moved
 {
-	MyFrame* frame = (MyFrame*)GetParent() ;
 	m_mousePoint.x = event.m_x ;
 	m_mousePoint.y = event.m_y ;
-	frame->Refresh() ;	// send an event that calls the OnPaint method
+	Refresh() ;	// send an event that calls the OnPaint method
 }
 
 //------------------------------------------------------------------------
@@ -63,7 +62,6 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 
 
 	switch(control->Id_Bouton){
-		std::cerr << control->Id_Bouton << std::endl ;
 		case 1: 
 			if(m_ClickNumber == 0){
 				m_ClickNumber ++ ;
