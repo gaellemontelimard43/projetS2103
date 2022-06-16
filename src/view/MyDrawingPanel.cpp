@@ -108,6 +108,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 			}
 		break;
 	}
+	Refresh() ;
 }
 
 //------------------------------------------------------------------------
