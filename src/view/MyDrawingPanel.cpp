@@ -60,6 +60,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 	m_onePoint.y = event.m_y ;
 	//Refresh() ; // send an event that calls the OnPaint method
 
+
 	switch(control->Id_Bouton){
 		case 1: 
 			if(m_ClickNumber == 0){
@@ -138,9 +139,9 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 		dc.DrawCircle(m_listclicks[0],radius/2);
 	}*/
 	//if(frame->Id_Bouton == 1){dc.DrawLine(m_mousePoint, m_onePoint) ;}
-
-	if(control->Id_Bouton == 1){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;} //check si valeur OKAY 
-	if(control->Id_Bouton == 2){dc.DrawCircle(m_listclicks[0], radius/2);}
+	if(m_listclicks[1].x == 0){}
+	else if(control->Id_Bouton == 1){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;} //check si valeur OKAY 
+	else if(control->Id_Bouton == 2){dc.DrawCircle(m_listclicks[0], radius/2);}
 
 	//dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
 	//dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
