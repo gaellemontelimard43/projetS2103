@@ -26,7 +26,7 @@ public:
 	MyControlPanel* GetControlPanel(){return m_controlPanel ;} ;
 	void RefreshDrawing(){m_drawingPanel->Refresh() ;} ;
 	void ControleurBouton(int ID);
-	void ControleurClick(int m_ClickNumber);
+	void ControleurClick(int ID,int m_ClickNumber);
 
 protected:
 	void OnQuit(wxCommandEvent& event);
