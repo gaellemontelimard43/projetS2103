@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 
-class Forme
+class Forme : public Dessin
 {
 public:
     // Construction/Destruction
@@ -23,10 +23,7 @@ public:
     // M�thodes virtuelles � d�clarer dans les classes filles
     // On d�clare la m�thode en inline (i.e. le code est directement
     // int�gr� dans la d�claration de la classe).
-    virtual void Display() const
-    {
-        std::cout << "Je suis une Forme" << std::endl;
-    }
+    virtual void Display() const{}
 
     virtual float Surface() const { return 0.0f; }
     virtual float Perimeter() const { return 0.0f; }

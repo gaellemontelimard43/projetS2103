@@ -155,4 +155,6 @@ float Rectangle::Perimeter() const
 }
 
 
-void Rectangle::Draw(){}
+void Rectangle::Draw(wxPaintDC& dc){
+
+}

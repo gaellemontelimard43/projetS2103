@@ -86,4 +86,8 @@ void Cercle::Display() const
         << endl;
 }
 
-void Cercle::Draw(){}
+void Cercle::Draw(wxPaintDC& dc){
+    dc.DrawCircle
+}
+
+	m_dessin.drawAll(wxPaintDC& dc); //boucle sur toutes les formes pour se dessiner

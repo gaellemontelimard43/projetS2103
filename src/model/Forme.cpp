@@ -70,5 +70,3 @@ std::string Forme::GetLabel() const
     return *(m_label);
 }
 
-Forme::virtual void Draw(){}
-

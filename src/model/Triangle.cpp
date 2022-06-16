@@ -82,4 +82,4 @@ void Triangle::Display() const
               << "(" << m_p3.GetX() << "," << m_p3.GetY() << ")"
               << " P=" << Perimeter() << " S=" << Surface() << std::endl;
 }
-void Triangle::Draw(){}
+void Triangle::Draw(wxPaintDC& dc){}

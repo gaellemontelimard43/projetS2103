@@ -141,7 +141,7 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	//if(frame->Id_Bouton == 1){dc.DrawLine(m_mousePoint, m_onePoint) ;}
 	if(m_listclicks[1].x == 0){}
 	else if(control->Id_Bouton == 1){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;} //check si valeur OKAY 
-	else if(control->Id_Bouton == 2){dc.DrawCircle(m_listclicks[0], sqrt((pow(m_listclicks[1].x,2))+pow(m_listclicks[1].y,2)));}
+	else if(control->Id_Bouton == 2){dc.DrawCircle(m_listclicks[0], radius/2);}
 	//dc.DrawRectangle(wxPoint(m_onePoint.x-radius/2, m_onePoint.y-radius/2), wxSize(radius,radius)) ;
 	//dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
 

@@ -13,5 +13,6 @@ Ligne::Ligne(){}
 
 Ligne::Ligne(wxPoint p1, wxPoint p2){}
 
-void Ligne::Draw(){}
+void Ligne::Draw(wxPaintDC& dc){}
+
 
