@@ -69,6 +69,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				// ----new Cercle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));
 				m_ClickNumber = 0 ;
 			}
 		break;

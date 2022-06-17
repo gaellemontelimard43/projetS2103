@@ -12,10 +12,10 @@
 #include "MyControlPanel.hpp"
 #include "MyFrame.hpp"
 #include "MyDrawingPanel.hpp"
-#include "Cercle.h"
-#include "Forme.h"
-#include "Rectangle.h"
-#include "Ligne"
+#include "../model/Cercle.h"
+#include "../model/Forme.h"
+#include "../model/Rectangle.h"
+//#include "../model/Ligne"
 
 #define WIDGET_PANEL_WIDTH	150
 #define WIDGET_Y0			30

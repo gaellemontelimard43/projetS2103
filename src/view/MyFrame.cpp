@@ -152,3 +152,9 @@ void MyFrame::Miseazero(){
 		m_drawingPanel->m_listclicks[2].x = 0 ; 
 		m_drawingPanel->m_listclicks[2].y = 0 ; 
 }
+//------------------------------------------------------------------------
+void MyFrame::SauvegardeForme(wxDC& dc){
+//------------------------------------------------------------------------
+
+}
+

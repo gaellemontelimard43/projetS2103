@@ -29,6 +29,8 @@ public:
 	MyControlPanel *m_controlPanel; // the panel with controls
 	MyDrawingPanel *m_drawingPanel; // the panel in which we draw
 	void Miseazero();
+	void SauvegardeForme(wxDC& dc);
+	
 
 protected:
 	void OnQuit(wxCommandEvent& event);

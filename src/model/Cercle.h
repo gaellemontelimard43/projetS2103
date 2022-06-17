@@ -35,7 +35,7 @@ public:
     virtual float Surface() const override;
     virtual float Perimeter() const override;
     virtual void Display() const override;
-    virtual void Draw() override;
+    void Draw(wxPaintDC& dc) override;
 
 private:    // Could be protected
     Point m_center;
