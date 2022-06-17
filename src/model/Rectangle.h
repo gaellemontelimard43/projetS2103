@@ -14,7 +14,8 @@ public:                                     // interface publique de la classe
     // Ici on rajoute une label
     Rectangle(int x, int y, int w, int h, const std::string& label);  // constructeur
     Rectangle(const Point& p, int w, int h, const std::string& label);// constructeur
-    ~Rectangle();                           // destructeur
+    Rectangle(wxPoint p1, wxSize p2, const std::string& label);
+    virtual ~Rectangle();                           // destructeur
 
     // Setters
     void SetCorner(const Point& p);

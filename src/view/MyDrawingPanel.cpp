@@ -117,7 +117,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
-				//new Rectangle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));
+				dessin.ajouterforme(new Rectangle(m_listclicks[0].x, m_listclicks[0].y, (m_listclicks[1].x-m_listclicks[0].x),(m_listclicks[1].y-m_listclicks[0].y),"rectangle"));
 				m_ClickNumber = 0 ;
 			}
 		break;
@@ -145,6 +145,7 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	//dc.setPen(wxNullPen);
 	//dc.setPen(wxPen(wxcolour(RED),epaisseur));
 	//dc.DrawLine(m_mousePoint, m_onePoint) ;
+	//il faut l'initaialiser dans toute les classe 
 
 	dessin.drawAll(dc);
 

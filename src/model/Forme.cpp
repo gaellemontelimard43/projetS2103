@@ -87,4 +87,3 @@ std::string Forme::GetLabel() const
     // On renvoie une copie de la chaine
     return *(m_label);
 }
-
