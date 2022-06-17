@@ -154,9 +154,9 @@ void MyFrame::Miseazero(){
 		m_drawingPanel->m_listclicks[2].y = 0 ; 
 }
 //------------------------------------------------------------------------
-void MyFrame::affichesauvegarde(wxDC& dc){
+/*void MyFrame::affichesauvegarde(wxDC& dc){
 //------------------------------------------------------------------------
 	dessin = Dessin();
 	dessin.drawall();
-}
+}*/
 
