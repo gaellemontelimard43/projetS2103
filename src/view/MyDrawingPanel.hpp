@@ -12,6 +12,7 @@
 #include <wx/image.h>
 #include <wx/file.h>
 #include <wx/bitmap.h>
+#include "../model/Dessin.h"
 
 
 
@@ -34,6 +35,7 @@ private:
 	void OnPaint(wxPaintEvent &event) ;
 	wxPoint m_mousePoint ;
 	wxPoint m_onePoint ;
+	Dessin dessin;
 };
 
 #endif

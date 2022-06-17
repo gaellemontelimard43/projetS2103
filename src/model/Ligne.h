@@ -14,6 +14,7 @@ class Ligne : public Forme
 {
 public:                        // interface publique de la classe
     Ligne();
+    Ligne(int m_x,int m_y, int m_a, int m_b);
     Ligne(Point x, Point y);
     ~Ligne();
     void Draw(wxPaintDC& dc);

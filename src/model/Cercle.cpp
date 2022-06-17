@@ -41,7 +41,7 @@ Cercle::Cercle(Point centre, int radius, string label) :
     cout << "Cercle (riche)" << endl;
     m_circleCount++;
 }
-/* Alternative
+/*
 Cercle::Cercle(Point centre, int radius, string label)
 {
     m_center = centre;

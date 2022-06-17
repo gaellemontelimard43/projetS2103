@@ -42,6 +42,7 @@ MyDrawingPanel::MyDrawingPanel(wxWindow *parent) : wxPanel(parent)
 	m_onePoint.x = (w-WIDGET_PANEL_WIDTH)/2 ;
 	m_onePoint.y = h/2 ;
 	m_mousePoint = m_onePoint ;
+	dessin = Dessin();
 }
 
 //------------------------------------------------------------------------
@@ -74,7 +75,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
-				ajouterforme(new Ligne(m_listclicks[0].x,m_listclicks[0].y,m_listclicks[1].x,m_listclicks[1].y));
+				dessin.ajouterforme(new Ligne(m_listclicks[0].x,m_listclicks[0].y,m_listclicks[1].x,m_listclicks[1].y));
 				m_ClickNumber = 0 ;
 			}
 		break;
@@ -87,7 +88,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				
-				ajouterforme(new Cercle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2))));
+				dessin.ajouterforme(new Cercle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)), "Cercle"));
 				m_ClickNumber = 0 ;
 			}
 
