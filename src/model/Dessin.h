@@ -19,10 +19,14 @@ using namespace std;
 class Dessin 
 {
     public:
+        Dessin(); //constructeur et destructeur
+        virtual ~Dessin();
         void drawAll(wxPaintDC& dc);
+        void ajouterforme(Forme* forme);
+        vector<Forme*>getVector();
 
     private:
-         vector<Forme*>m_dessin;
+         vector<Forme*>dessin;
 }
 
 #endif
