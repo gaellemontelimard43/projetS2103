@@ -30,6 +30,7 @@ public:
 	MyDrawingPanel *m_drawingPanel; // the panel in which we draw
 	void Miseazero();
 	void SauvegardeForme(wxDC& dc);
+	void affichesauvegarde(wxDC& dc);
 	
 
 protected:

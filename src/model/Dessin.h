@@ -12,7 +12,7 @@
 #include <wx/bitmap.h>
 #include <iostream>
 #include <vector>
-#include <Forme.h>
+#include "Forme.h"
 
 using namespace std;
 
@@ -27,7 +27,7 @@ class Dessin
 
     private:
          vector<Forme*>dessin;
-}
+};
 
 #endif
 

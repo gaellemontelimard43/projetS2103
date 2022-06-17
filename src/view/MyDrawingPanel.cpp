@@ -74,7 +74,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
-				dessin->ajouterforme(new Ligne(m_listclicks[0].x,m_listclicks[0].y,m_listclicks[1].x,m_listclicks[1].y);)
+				ajouterforme(new Ligne(m_listclicks[0].x,m_listclicks[0].y,m_listclicks[1].x,m_listclicks[1].y));
 				m_ClickNumber = 0 ;
 			}
 		break;
@@ -87,7 +87,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
 				
-				new Cercle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));
+				ajouterforme(new Cercle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2))));
 				m_ClickNumber = 0 ;
 			}
 
@@ -152,7 +152,7 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 		dc.DrawCircle(m_listclicks[0],radius/2);
 	}*/
 	//if(frame->Id_Bouton == 1){dc.DrawLine(m_mousePoint, m_onePoint) ;}
-	frame->affichesauvegarde();
+	frame->affichesauvegarde(dc);
 
 	if(m_listclicks[1].x == 0){}
 	else if(control->Id_Bouton == 1){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;} //check si valeur OKAY 
