@@ -176,5 +176,5 @@ float Rectangle::Perimeter() const
 
 
 void Rectangle::Draw(wxPaintDC& dc){
-    dc.DrawRectangle(m_corner.x,m_corner.y,m_w,m_h);
+    dc.DrawRectangle(m_corner.GetX(),m_corner.GetY(),m_w,m_h);
 }
