@@ -36,7 +36,7 @@ public:                                     // interface publique de la classe
     // On rajoute les autres m�thodes virtuelles
     virtual float Surface() const override;
     virtual float Perimeter() const override;
-    virtual void Draw() override;
+    void Draw(wxPaintDC& dc);
 
     // M�thode statique pour le comptage de points
     static int GetRectCount();              // retourne le nombre de rectangles
