@@ -21,6 +21,6 @@ public:                        // interface publique de la classe
 private: 
     Point x;
     Point y;
-}
+};
 
 #endif 

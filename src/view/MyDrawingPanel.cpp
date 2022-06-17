@@ -13,6 +13,11 @@
 #include "MyControlPanel.hpp"
 #include "MyFrame.hpp"
 #include "../model/Point.h"
+#include "../model/Forme.h"
+#include "../model/Cercle.h"
+#include "../model/Ligne.h"
+#include "../model/Rectangle.h"
+#include "../model/Dessin.h"
 
 #define WIDGET_PANEL_WIDTH	150
 
@@ -69,7 +74,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
-				// ----new Cercle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));
+				dessin->ajouterforme(new Ligne(m_listclicks[0].x,m_listclicks[0].y,m_listclicks[1].x,m_listclicks[1].y);)
 				m_ClickNumber = 0 ;
 			}
 		break;
@@ -81,6 +86,8 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				
+				new Cercle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));
 				m_ClickNumber = 0 ;
 			}
 
@@ -96,6 +103,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 			}else {
 
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				//new Triangle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));
 				m_ClickNumber = 0 ;
 			}
 
@@ -108,6 +116,7 @@ void MyDrawingPanel::OnMouseLeftDown(wxMouseEvent &event)
 				m_ClickNumber ++ ;
 			}else{
 				frame->ControleurClick(m_ClickNumber,m_onePoint.x,m_onePoint.y);
+				//new Rectangle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));
 				m_ClickNumber = 0 ;
 			}
 		break;
