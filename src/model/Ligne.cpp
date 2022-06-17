@@ -35,7 +35,7 @@ Ligne::Ligne(){}
 Ligne::Ligne(wxPoint p1, wxPoint p2){}
 
 void Ligne::Draw(wxPaintDC& dc){
-    dc.DrawLine(m_x,m_y,m_a,m_b);
+    dc.DrawLine((x.GetX(),x.GetY()),(y.Getx(), y.GetY()));
 }
 
 

@@ -27,7 +27,7 @@ public:
 
     virtual float Surface() const { return 0.0f; }
     virtual float Perimeter() const { return 0.0f; }
-    //virtual void Draw();
+    //virtual void Draw(wxPaintDC& dc);
 
 
 protected:  // ou private

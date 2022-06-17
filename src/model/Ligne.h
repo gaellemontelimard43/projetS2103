@@ -14,16 +14,13 @@ class Ligne : public Forme
 {
 public:                        // interface publique de la classe
     Ligne();
-    Ligne(int m_x,int m_y, int m_a, int m_b);
-    Ligne(wxPoint p1, wxPoint p2);
+    Ligne(Point x, Point y);
     ~Ligne();
-    virtual void Draw() override;
+    void Draw(wxPaintDC& dc);
 
 private: 
-    int m_x ; 
-    int m_y ;
-    int m_a ;
-    int m_b ;
+    Point x;
+    Point y;
 }
 
 #endif 
