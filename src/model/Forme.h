@@ -1,6 +1,14 @@
 #ifndef __FORME_H__
 #define __FORME_H__
 
+#include "wx/wxprec.h"
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+#include<wx/filedlg.h>
+#include <wx/image.h>
+#include <wx/file.h>
+#include <wx/bitmap.h>
 #include <string>
 #include <iostream>
 
@@ -27,7 +35,7 @@ public:
 
     virtual float Surface() const { return 0.0f; }
     virtual float Perimeter() const { return 0.0f; }
-    //virtual void Draw(wxPaintDC& dc);
+    virtual void Draw(wxPaintDC& dc) = 0;
 
 
 protected:  // ou private

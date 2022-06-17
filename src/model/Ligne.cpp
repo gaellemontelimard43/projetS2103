@@ -1,4 +1,4 @@
-#include "ligne.h"
+#include "Ligne.h"
 #include <iostream>
 using namespace std;
 
@@ -24,18 +24,32 @@ using namespace std;
 
 
 //-------------------------------------------
-Ligne::Ligne(int m_x,int m_y, int m_a, int m_b)
+Ligne::Ligne(int m_x,int m_y, int m_a, int m_b):
 //-------------------------------------------
-m_x(m_x),m_y(m_y),m_a(m_a),m_b(m_b);
+m_x(m_x),m_y(m_y),m_a(m_a),m_b(m_b)
 {   
+
 }
+
+Ligne::~Ligne(){
+    
+}
+
 
 Ligne::Ligne(){}
 
-Ligne::Ligne(wxPoint p1, wxPoint p2){}
+Ligne::Ligne(Point x, Point y) :
+    x(x),
+    y(y)
+
+{
+
+}
+
+
 
 void Ligne::Draw(wxPaintDC& dc){
-    dc.DrawLine((x.GetX(),x.GetY()),(y.Getx(), y.GetY()));
+    dc.DrawLine(m_x,m_y,m_a, m_b);
 }
 
 

@@ -16,12 +16,16 @@ public:                        // interface publique de la classe
     Ligne();
     Ligne(int m_x,int m_y, int m_a, int m_b);
     Ligne(Point x, Point y);
-    ~Ligne();
-    void Draw(wxPaintDC& dc);
+    virtual ~Ligne();
+    virtual void Draw(wxPaintDC& dc);
 
 private: 
     Point x;
     Point y;
+    int m_x;
+    int m_y;
+    int m_a;
+    int m_b;
 };
 
 #endif 

@@ -46,9 +46,9 @@ Point::Point(int z)
     m_pointCount++;
 }
 
-Point::Point(wxPoint){
-    m_x = wxPoint.x ;
-    m_y = wxPoint.y ;
+Point::Point(wxPoint p){
+    m_x =p.x ;
+    m_y = p.y ;
 }
 
 //-------------------------------------------

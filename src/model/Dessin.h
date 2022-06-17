@@ -23,7 +23,7 @@ class Dessin
        ~Dessin();
         void drawAll(wxPaintDC& dc);
         void ajouterforme(Forme* forme);
-        vector<Forme*>getVector();
+        vector<Forme*> getVector();
 
     private:
          vector<Forme*>dessin;

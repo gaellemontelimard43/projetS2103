@@ -111,4 +111,3 @@ void Cercle::Draw(wxPaintDC& dc){
     dc.DrawCircle(m_center.GetX(),m_center.GetY(),m_radius);
 }
 
-	m_dessin.drawAll(wxPaintDC& dc); //boucle sur toutes les formes pour se dessiner
