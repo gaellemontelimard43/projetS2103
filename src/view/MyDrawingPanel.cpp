@@ -145,23 +145,14 @@ void MyDrawingPanel::OnPaint(wxPaintEvent &event)
 	//dc.setPen(wxNullPen);
 	//dc.setPen(wxPen(wxcolour(RED),epaisseur));
 	//dc.DrawLine(m_mousePoint, m_onePoint) ;
-/*
-	if( ==1){
-		dc.DrawLine(m_listclicks[0], m_listclicks[1]);
-	}
-	if( ==2){
-		dc.DrawCircle(m_listclicks[0],radius/2);
-	}*/
-	//if(frame->Id_Bouton == 1){dc.DrawLine(m_mousePoint, m_onePoint) ;}
+
 	dessin.drawAll(dc);
 
 	if(m_listclicks[1].x == 0){}
 	else if(control->Id_Bouton == 1){dc.DrawLine(m_listclicks[0], m_listclicks[1]) ;} //check si valeur OKAY 
 	else if(control->Id_Bouton == 2){dc.DrawCircle(m_listclicks[0], sqrt((pow(m_listclicks[1].x-m_listclicks[0].x,2))+pow(m_listclicks[1].y-m_listclicks[0].y,2)));}
 	else if(control->Id_Bouton == 4){dc.DrawRectangle(wxPoint(m_listclicks[0].x, m_listclicks[0].y), wxSize((m_listclicks[1].x-m_listclicks[0].x),(m_listclicks[1].y-m_listclicks[0].y))) ;}
-	//dc.DrawCircle(wxPoint(m_mousePoint), radius/2) ;
 
-	
 	if (check)
 	{
 		wxString coordinates ;

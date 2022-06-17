@@ -20,7 +20,7 @@ class Dessin
 {
     public:
         Dessin(); //constructeur et destructeur
-        virtual ~Dessin();
+       ~Dessin();
         void drawAll(wxPaintDC& dc);
         void ajouterforme(Forme* forme);
         vector<Forme*>getVector();

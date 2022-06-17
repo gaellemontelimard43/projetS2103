@@ -29,10 +29,10 @@ public:
 	int Id_Bouton = 0 ;
 
 private:
-	void OnLigne(wxCommandEvent &event) ;
-	void OnCercle(wxCommandEvent &event) ;
-	void OnTriangle(wxCommandEvent &event) ;
-	void OnRectangle(wxCommandEvent &event) ;
+	void OnBoutonLigne(wxCommandEvent &event) ;
+	void OnBoutonCercle(wxCommandEvent &event) ;
+	void OnBoutonTriangle(wxCommandEvent &event) ;
+	void OnBoutonRectangle(wxCommandEvent &event) ;
 	void OnSlider(wxScrollEvent &event) ;
 	void OnCoordonnees(wxCommandEvent &event) ;
 	void OnCouleur(wxCommandEvent &event) ;

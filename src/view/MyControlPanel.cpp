@@ -15,13 +15,11 @@
 #include "../model/Cercle.h"
 #include "../model/Forme.h"
 #include "../model/Rectangle.h"
-//#include "../model/Ligne"
+#include "../model/Ligne.h"
 
 #define WIDGET_PANEL_WIDTH	150
 #define WIDGET_Y0			30
 #define WIDGET_Y_STEP		50
-
-
 
 enum
 {
@@ -50,19 +48,19 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 
 	y = WIDGET_Y0 ;
 	m_button = new wxButton(this,ID_LIGNE, wxT("ligne"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnLigne, this, ID_LIGNE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnBoutonLigne, this, ID_LIGNE) ;
 
 	y += WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_CERCLE, wxT("cercle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnCercle, this, ID_CERCLE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnBoutonCercle, this, ID_CERCLE) ;
 
 	y += WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_TRIANGLE, wxT("triangle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnTriangle, this, ID_TRIANGLE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnBoutonTriangle, this, ID_TRIANGLE) ;
 
 	y += WIDGET_Y0 ;
 	m_button = new wxButton(this, ID_RECTANGLE, wxT("rectanle"), wxPoint(10, y)) ;
-	Bind(wxEVT_BUTTON, &MyControlPanel::OnRectangle, this, ID_RECTANGLE) ;
+	Bind(wxEVT_BUTTON, &MyControlPanel::OnBoutonRectangle, this, ID_RECTANGLE) ;
 	
 	y+= WIDGET_Y_STEP ;
 	wxStaticText* text1 = new wxStaticText(this, wxID_ANY, wxT("Epaisseur du trait"), wxPoint(10, y)) ;
@@ -85,16 +83,9 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 	y+= WIDGET_Y_STEP ;
 	m_radioButton = new wxRadioButton(this, ID_COULEUR_CONTROLEUR1, "Standard", wxPoint(10, y), wxSize(100,20),0,wxDefaultValidator) ;
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR_CONTROLEUR1) ;
-	//y+= WIDGET_Y_STEP ;
+
 	m_radioButton2 = new wxRadioButton(this, ID_COULEUR_CONTROLEUR2, "Eco", wxPoint(92, y), wxSize(100,20),0,wxDefaultValidator) ;
 	Bind(wxEVT_RADIOBUTTON, &MyControlPanel::OnCouleur, this, ID_COULEUR_CONTROLEUR2) ;
-
-	//wxListBox (wxWindow *parent, wxWindowID id, 
-	//const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, int n=0, const wxString choices[]=NULL, long style=0, const wxValidator &validator=wxDefaultValidator, const wxString &name=wxListBoxNameStr)
-	
-	//m_comboBox->Append("Rouge");
-	//m_arrItems.Add( wxT("rectangle") );
-	//m_arrItems.Add( wxT("triangle") );
 
 	y+= WIDGET_Y_STEP ;
 	m_comboBox = new wxComboBox(this, ID_COULEUR_FORME, "Couleurs", wxPoint(10, y), wxSize(100,20),0,NULL,0,wxDefaultValidator,"comboBox");
@@ -102,7 +93,7 @@ MyControlPanel::MyControlPanel(wxWindow *parent) : wxPanel(parent)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnLigne(wxCommandEvent &event) //boutonLigne
+void MyControlPanel::OnBoutonLigne(wxCommandEvent &event) //boutonLigne
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
@@ -114,7 +105,7 @@ void MyControlPanel::OnLigne(wxCommandEvent &event) //boutonLigne
 
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnCercle(wxCommandEvent &event)
+void MyControlPanel::OnBoutonCercle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent();
@@ -124,7 +115,7 @@ void MyControlPanel::OnCercle(wxCommandEvent &event)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnTriangle(wxCommandEvent &event)
+void MyControlPanel::OnBoutonTriangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
@@ -134,7 +125,7 @@ void MyControlPanel::OnTriangle(wxCommandEvent &event)
 }
 
 //------------------------------------------------------------------------
-void MyControlPanel::OnRectangle(wxCommandEvent &event)
+void MyControlPanel::OnBoutonRectangle(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
 	MyFrame* frame = (MyFrame*)GetParent() ;
@@ -147,7 +138,6 @@ void MyControlPanel::OnRectangle(wxCommandEvent &event)
 void MyControlPanel::OnCouleur(wxCommandEvent &event)
 //------------------------------------------------------------------------
 {
-
 	MyFrame* frame = (MyFrame*)GetParent() ;
 	MyDrawingPanel* panel = (MyDrawingPanel*)GetParent() ;
 
@@ -161,7 +151,10 @@ void MyControlPanel::OnCouleur(wxCommandEvent &event)
 	}
 }
 
-void MyControlPanel::OnComboBox(wxCommandEvent &event){
+//------------------------------------------------------------------------
+void MyControlPanel::OnComboBox(wxCommandEvent &event)
+//------------------------------------------------------------------------
+{
 	
 	MyFrame* frame = (MyFrame*)GetParent() ;
 	frame->RefreshDrawing() ;	// update the drawing panel
