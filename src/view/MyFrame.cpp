@@ -14,6 +14,7 @@
 #include "MyFrame.hpp"
 #include "MyDrawingPanel.hpp"
 #include "MyControlPanel.hpp"
+#include "../model/Dessin.h"
 
 #define WIDGET_PANEL_WIDTH	150
 #define APP_NAME "M1102 Skeleton 1.0"
@@ -155,6 +156,7 @@ void MyFrame::Miseazero(){
 //------------------------------------------------------------------------
 void MyFrame::affichesauvegarde(wxDC& dc){
 //------------------------------------------------------------------------
-	dessin->drawall()
+	dessin = Dessin();
+	dessin.drawall();
 }
 

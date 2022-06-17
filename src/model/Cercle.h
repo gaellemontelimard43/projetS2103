@@ -23,6 +23,7 @@ public:
     // Construction par d�faut, par copie, avec param�tres
     Cercle();
     Cercle(const Cercle &other);
+    
     Cercle(Point centre, int radius, std::string label);
 
     // Destructeur virtuel car on peut d�river cette classe
